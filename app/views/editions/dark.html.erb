@@ -1,0 +1,38 @@
+<div>
+  <h1>Dark Candles</h1>
+  <p>Immerse yourself in the luxury of our handcrafted candles, meticulously designed for serenity and energy protection. Each creation is a testament to our commitment, crafted with care in the heart of England to elevate your senses and bring an enchanting ambiance to your space.</p>
+  <%= image_tag("dark_edition.webp", alt: "Candles", class:"w-100 main-image") %>
+  <div class="container">
+    <div class="row gx-5">
+      <% @candles.each do |candle| %>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <%= link_to(candle) do %>
+            <div class="card text-center">
+              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <% candle.images.each do |image| %>
+                      <%= image_tag(image.url, class: "card-img-top carousel-item d-block", alt: "Candle Image") %>
+                    <% end %>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title"><%= candle.scent %></h3>
+                <p><%= number_to_currency(candle.price, unit: '£') %></p>
+                <p><%= candle.size %></p>
+                <a href="#" class="btn">Quick Shop</a>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

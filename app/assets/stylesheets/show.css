@@ -1,0 +1,21 @@
+.add-to-bag {
+  background-color: black;
+  padding: 30px 132px;
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+/* .add-to-bag::hover {
+  text-decoration: none;
+} */
+.candle-show {
+  flex-flow: column wrap;
+  /* justify-content: space-between; */
+  gap: 150px;
+  max-width: 25%;
+}
+
+/* .flex-item {
+  width: 100%;
+} */

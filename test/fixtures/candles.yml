@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  scent: MyString
+  size: MyString
+  date_made: 2023-11-15
+  description: MyText
+  stock: 1
+  price: 9.99
+  edition: one
+
+two:
+  scent: MyString
+  size: MyString
+  date_made: 2023-11-15
+  description: MyText
+  stock: 1
+  price: 9.99
+  edition: two

@@ -1,0 +1,35 @@
+<div>
+  <div class="d-flex justify-space-between gap-3">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <% @candle.images.each do |image| %>
+            <%= image_tag(image.url, class: "carousel-item d-block", alt: "Candle Image") %>
+          <% end %>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="d-flex candle-show">
+      <div>
+        <h1 class="flex-item"><%= @candle.scent %></h1>
+        <p><%= number_to_currency(@candle.price, unit: '£')%></p>
+      </div>
+      <div>
+        <p class="flex-item"><%= @candle.description %> Fill weight <%= @candle.size %>.</p>
+        <p>Hand poured on: <%= @candle.date_made %></p>
+        <div class="d-flex flex-column justify-content-between">
+          <%= image_tag(@candle.images.first.url, class: "size-image carousel-item d-block", alt: "Candle Image") %>
+          <p style="text-decoration: underline;"><%= @candle.size %></p>
+        </div>
+      </div>
+        <a href="#" class="add-to-bag flex-item">Add to bag</a>
+    </div>
+  </div>
+  <h1>Reviews</h1>
+</div>
