@@ -7,4 +7,5 @@ class Order < ApplicationRecord
   validates :total_amount, numericality: { greater_than_or_equal_to: 0 }
 
   delegate :first_name, :last_name, :email, to: :user, prefix: true
+  scope :in_progress, -> { where(status: 'in_progress') }
 end

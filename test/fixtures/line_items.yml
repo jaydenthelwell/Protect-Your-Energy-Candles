@@ -2,12 +2,8 @@
 
 one:
   candle: one
-  order: one
-  quantity: 1
-  price: 9.99
+  cart: one
 
 two:
   candle: two
-  order: two
-  quantity: 1
-  price: 9.99
+  cart: two

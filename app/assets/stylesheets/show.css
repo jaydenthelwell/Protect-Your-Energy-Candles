@@ -19,3 +19,14 @@
 /* .flex-item {
   width: 100%;
 } */
+
+/* In your application.css or application.scss file */
+.badge {
+  background-color: red; /* or your desired background color */
+  color: white; /* or your desired text color */
+  border-radius: 50%;
+  padding: 0.2em 0.5em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

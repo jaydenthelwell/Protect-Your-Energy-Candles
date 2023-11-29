@@ -1,0 +1,38 @@
+<%= form_for [@user, @address] do |f| %>
+  <div class="field">
+    <%= f.label :first_name, 'First Name' %><br />
+    <%= f.text_field :first_name, placeholder: 'Enter your first name' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name, 'Last Name' %><br />
+    <%= f.text_field :last_name, placeholder: 'Enter your last name' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :street, 'Street' %><br />
+    <%= f.text_field :street, placeholder: 'Enter your street address' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city, 'City' %><br />
+    <%= f.text_field :city, placeholder: 'Enter your city' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :county, 'County' %><br />
+    <%= f.text_field :county, placeholder: 'Enter your county' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :postcode, 'Postcode' %><br />
+    <%= f.text_field :postcode, placeholder: 'Enter your postcode' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number, 'Phone Number' %><br />
+    <%= f.text_field :phone_number, placeholder: 'Enter your phone number' %>
+  </div>
+<br><br>
+  <%= f.submit 'Save Address', class: 'btn btn-primary' %>
+<% end %>
