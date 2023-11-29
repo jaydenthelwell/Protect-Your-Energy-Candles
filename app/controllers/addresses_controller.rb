@@ -18,14 +18,13 @@ class AddressesController < ApplicationController
     @user = current_user
     Rails.logger.debug("current_user: #{@user.inspect}")
 
-    if params[:address].present? # Check if :address key is present in params
+    if params[:address].present?
       @address = @user.addresses.build(address_params)
 
       if params[:address][:default] == '1'
         @user.addresses.update_all(default: false)
         @address.default = true
       elsif @user.addresses.empty?
-        # If no addresses exist, set this one as default
         @address.default = true
       end
 
@@ -35,7 +34,6 @@ class AddressesController < ApplicationController
         render :index
       end
     else
-      # Handle the case when the :address key is missing in params
       flash[:alert] = 'Address parameters are missing.'
       redirect_to user_addresses_path(@user)
     end
