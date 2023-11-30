@@ -9,6 +9,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
   # GET /carts/1 or /carts/1.json
   def show
+    @line_items = @cart.line_items
   end
 
   # GET /carts/new

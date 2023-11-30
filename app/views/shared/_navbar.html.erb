@@ -24,11 +24,12 @@
         </li>
       </ul>
     </div>
-    <%# <%= link_to cart_path do %>
-      <%# <i class="fa-solid fa-basket-shopping"></i> %>
-      <%# <% if @line_items.present? %>
-        <%# <span class="badge"><%= @line_items.count %>
-      <%# <% end %>
-    <%# <% end %>
+    <%= link_to @cart do %>
+      <i class="fa-solid fa-basket-shopping"></i>
+      <% total_quantity = @line_items.sum(&:quantity) %>
+      <% if total_quantity > 0 %>
+        <span class="badge"><%= total_quantity %></span>
+      <% end %>
+    <% end %>
   </div>
 </nav>

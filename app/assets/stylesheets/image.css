@@ -10,3 +10,13 @@
 .size-image {
   width: 20%;
 }
+
+.quantity-input {
+
+  border: none;
+}
+
+/* .quantity-adjust {
+  display: flex;
+  justify-content: space-between;
+} */

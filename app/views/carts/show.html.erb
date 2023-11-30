@@ -1,10 +1,27 @@
 <p style="color: green"><%= notice %></p>
-
 <%= render @cart %>
 
-<div>
-  <%= link_to "Edit this cart", edit_cart_path(@cart) %> |
-  <%= link_to "Back to carts", carts_path %>
+<div class="container">
+  <h1>Shopping Cart</h1>
 
-  <%= button_to "Destroy this cart", @cart, method: :delete %>
+  <% @cart.line_items.each do |item| %>
+  <div class="d-flex justify-space-between">
+    <%= item.candle.scent %>
+
+    <%= form_for(item, url: line_item_path(item), method: :patch, html: { class: 'quantity-form' }) do |form| %>
+      <div class="quantity-adjust">
+        <%= form.button '-', name: 'quantity_adjust', value: 'decrease', class: 'quantity-adjust-btn' %>
+        <%= form.text_field :quantity, class: 'quantity-input', size: item.quantity.to_s.length, style: "text-align: center;" %>
+        <%= form.button '+', name: 'quantity_adjust', value: 'increase', class: 'quantity-adjust-btn' %>
+      </div>
+    <% end %>
+
+      <%= number_to_currency(item.candle.price * item.quantity, unit: '£') %>
+      <%= link_to 'Remove', line_item_path(item), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
+  <% if @cart.line_items.empty? %>
+    <p>!You have not added any items to your shopping bag</p>
+  <% end %>
+<%# <%= link_to 'Proceed to Checkout', checkout_cart_path, class: 'btn btn-primary' %>
 </div>

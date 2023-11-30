@@ -1,4 +1,5 @@
 class Candle < ApplicationRecord
+  before_destroy :not_referenced_by_any_line_item
   validates :scent, :size, :date_made, :description, presence: true
   validates :stock, :price, numericality: { greater_than_or_equal_to: 0 }
   belongs_to :edition
@@ -8,5 +9,13 @@ class Candle < ApplicationRecord
 
   validates :images, length: { is: 3 }
 
+  private
+
+  def not_referenced_by_any_line_item
+    unless line_items.empty?
+      errors.add(:base, "Line items present")
+      throw :abort
+    end
+  end
   # monetize :price_pounds, as: "price", with_currency: :gbp, numericality: { greater_than_or_equal_to: 0 }, :allow_nil => true
 end

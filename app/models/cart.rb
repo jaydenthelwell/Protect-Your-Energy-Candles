@@ -1,7 +1,7 @@
 class Cart < ApplicationRecord
   has_many :line_items, dependent: :destroy
 
-  def add_candle
+  def add_candle(candle)
     current_item = line_items.find_by(candle_id: candle.id)
     if current_item
       current_item.increment(:quantity)

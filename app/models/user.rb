@@ -22,6 +22,15 @@ class User < ApplicationRecord
   has_many :candles
   has_many :addresses, dependent: :destroy
 
+  def primary_address
+    addresses.primary_address.first
+  end
+
+  def set_primary_address(address)
+    addresses.update_all(primary: false)
+    address.update(primary: true)
+  end
+
   def current_order
     orders.in_progress.first_or_create
   end

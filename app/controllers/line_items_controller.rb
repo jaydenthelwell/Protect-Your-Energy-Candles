@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_line_item, only: %i[ show edit update destroy ]
-  before_action :set_cart, only [:create]
+  before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart, only: [:create, :update, :destroy]
 
   # GET /line_items or /line_items.json
   def index
@@ -24,11 +24,11 @@ class LineItemsController < ApplicationController
   # POST /line_items or /line_items.json
   def create
     candle = Candle.find(params[:candle_id])
-    @line_item = @cart.add_candle(line_item_params)
+    @line_item = @cart.add_candle(candle)
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart(@line_item), notice: "Item added to bag." }
+        format.html { redirect_to candle, notice: "Item added to bag." }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,9 +39,22 @@ class LineItemsController < ApplicationController
 
   # PATCH/PUT /line_items/1 or /line_items/1.json
   def update
+    if params[:quantity_adjust] == 'increase'
+      @line_item.quantity += 1
+    elsif params[:quantity_adjust] == 'decrease' && @line_item.quantity > 1
+      @line_item.quantity -= 1
+    elsif @line_item.quantity <= 1
+      @line_item.destroy
+      respond_to do |format|
+        format.html { redirect_to cart_path(@cart), notice: "Item was successfully removed from bag." }
+        format.json { head :no_content }
+      end
+      return
+    end
+
     respond_to do |format|
-      if @line_item.update(line_item_params)
-        format.html { redirect_to line_item_url(@line_item), notice: "Line item was successfully updated." }
+      if @line_item.save
+        format.html { redirect_to cart_path(@cart), notice: "Quantity updated." }
         format.json { render :show, status: :ok, location: @line_item }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,9 +66,8 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1 or /line_items/1.json
   def destroy
     @line_item.destroy
-
     respond_to do |format|
-      format.html { redirect_to line_items_url, notice: "Line item was successfully destroyed." }
+      format.html { redirect_to cart_path(@cart), notice: "Line item was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -66,8 +78,7 @@ class LineItemsController < ApplicationController
       @line_item = LineItem.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def line_item_params
-      params.require(:line_item).permit(:candle_id, :cart_id)
+      params.require(:line_item).permit(:candle_id, :quantity)
     end
 end

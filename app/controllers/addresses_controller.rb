@@ -49,12 +49,13 @@ class AddressesController < ApplicationController
     if @address.update(default: true)
       flash[:notice] = "Default address set successfully."
     else
-      flash[:alert] = "Failed to set default address. Errors: #{address.errors.full_messages.to_sentence}"
+      flash[:alert] = "Failed to set default address. Errors: #{@address.errors.full_messages.to_sentence}"
     end
     @user.reload
 
     redirect_to user_addresses_path(current_user)
   end
+
 
   def destroy
     @address = current_user.addresses.find(params[:id])

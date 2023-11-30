@@ -29,12 +29,7 @@
           <p style="text-decoration: underline;"><%= @candle.size %></p>
         </div>
       </div>
-      <%= form_with(model: LineItem.new, url: line_items_path, method: :post) do |form| %>
-        <%= form.hidden_field :candle_id, value: @candle.id %>
-        <%= form.label :quantity %>
-        <%= form.number_field :quantity, min: 1, value: 1 %>
-        <%= form.submit 'Add to Bag', class: "add-to-bag flex-item" %>
-      <% end %>
+      <%= button_to "Add to bag", line_items_path(candle_id: @candle), method: :post, class: "add-to-bag flex-item", remote: true %>
     </div>
   </div>
   <h1>Reviews</h1>
