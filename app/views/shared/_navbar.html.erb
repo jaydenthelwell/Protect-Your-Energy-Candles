@@ -1,35 +1,55 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <%= link_to "Protect Your Energy", root_path, class: "navbar-brand" %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-regular fa-user"></i>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <% if user_signed_in? %>
-              <li><%= link_to "Profile", user_path(@user || current_user), class: "dropdown-item" %></li>
-              <li><%= link_to "Orders", "#", class: "dropdown-item" %></li>
-              <li><%= link_to "Wishlist", "#", class: "dropdown-item" %></li>
-              <li><%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %></li>
-            <% else %>
-              <li><%= link_to "Login", new_user_session_path, class: "dropdown-item" %></li>
-              <li><%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" %></li>
-            <% end %>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <%= link_to @cart do %>
-      <i class="fa-solid fa-basket-shopping"></i>
-      <% total_quantity = @line_items.sum(&:quantity) %>
-      <% if total_quantity > 0 %>
-        <span class="badge"><%= total_quantity %></span>
+<nav class="navbar navbar-expand-lg navbar-light" style="position: fixed;
+    z-index: 100;
+    padding: 40px;
+    top: 0;
+    background-color: #FFF6EA;
+    width: 100%;
+    padding-bottom: 0;">
+  <div class="container-fluid" >
+    <%# <div class="pye-logo"> %>
+      <%= link_to root_path do %>
+        <%= image_tag("protect_your_energy_logo.png", class: "navbar-text navbar-brand") %>
       <% end %>
-    <% end %>
+    <%# </div> %>
+    <div class="nav-container d-flex justify-content-between">
+      <div class="options">
+        <%= link_to("home", root_path, class: "btn home-btn navbar-text") %>
+        <%= link_to("shop all", candles_path, class: "btn navbar-options-text navbar-text") %>
+        <%= link_to("luminous", light_editions_path, class: "btn navbar-options-text navbar-text") %>
+        <%= link_to("nocturna", dark_editions_path, class: "btn navbar-options-text navbar-text") %>
+      </div>
+      <div class="nav-icons">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-regular fa-user" style="color: black;"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <% if user_signed_in? %>
+                  <li><%= link_to "Profile", user_path(@user || current_user), class: "dropdown-item" %></li>
+                  <li><%= link_to "Orders", "#", class: "dropdown-item" %></li>
+                  <li><%= link_to "Wishlist", "#", class: "dropdown-item" %></li>
+                  <li><%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %></li>
+                <% else %>
+                  <li><%= link_to "Login", new_user_session_path, class: "dropdown-item" %></li>
+                  <li><%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" %></li>
+                <% end %>
+              </ul>
+            </li>
+          </ul>
+          <%= link_to @cart do %>
+            <i class="fa-solid fa-basket-shopping" style="color: black;"></i>
+            <% total_quantity = @line_items.sum(&:quantity) %>
+            <% if total_quantity > 0 %>
+              <span class="badge" style="background-color: #e75f5f; top: 60px; right: 20px;"><%= total_quantity %></span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>

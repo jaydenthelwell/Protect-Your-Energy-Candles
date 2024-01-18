@@ -1,6 +1,98 @@
-<div>
-  <h1>Protect Your Energy</h1>
-    <%= link_to("Shop All", candles_path, class: "btn") %>
-    <%= link_to("Shop Light", "editions/light", class: "btn") %>
-    <%= link_to("Shop Dark", "editions/dark", class: "btn") %>
+<div class="landing-container">
+  <%# <div class="alerts">
+  </div> %>
+  <div style="position: relative; display: flex; align-items: center; justify-content: center; border: white;">
+    <%= image_tag("landing_page_image.png", class:"landing_page_image") %>
+    <div style="position: absolute;
+    z-index: 2;
+    color: #FFF6EA;
+    font-family: 'Work Sans', sans-serif;
+    top: 10%;
+    right: 73%;"><h4>100% Natural Soy Candles</h4></div>
+  </div>
+  <div class="lilac-section"></div>
+  <div class="container description-container">
+    <div class="card description-card">
+      <div class="card-body description-card-body">
+        <%# <h5 class="card-title">Hello!</h5> %>
+        <%= image_tag("glow-in-peace.png", class: "peace-phrase") %>
+        <p class="card-text description-card-text">Discover a curated collection of exquisite candles designed to elevate your ambiance and evoke moments of tranquility.
+          Each candle is a testament to our commitment to quality, sustainability, and the artistry of candle-making.
+          Indulge in the flickering glow of our candles and elevate every moment.</p>
+        <%= link_to candles_path do %>
+          <button class="shop-now">SHOP NOW</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="d-flex justify-content-center align-items-center" style="flex-direction: column; text-align: center; height: 40vh; gap: 40px">
+      <%# <div> %>
+        <%= image_tag("bestsellers.png", class: "bestsellers-image") %>
+        <p style="padding-left: 40px; padding-right: 40px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis dolor quis neque semper, sollicitudin porta ante congue. Duis massa lacus, fermentum quis consectetur quis, aliquet sit amet metus. Pellentesque ac sagittis nisi.</p>
+      <%# </div> %>
+    </div>
+  </div>
+  <div class="images-container">
+    <div class="d-flex justify-content-evenly" style="gap: 40px;">
+      <div class="image-container">
+        <%= link_to light_editions_path do %>
+        <%= image_tag("light_image_1.png", class: "bestseller-images flexible-image-1") %>
+        <div class="button-container-1">
+            <button class="shop-now">SHOP NOW</button>
+          <% end %>
+        </div>
+      </div>
+      <div class="image-container">
+        <%= link_to light_editions_path do %>
+        <%= image_tag("light_image_2.png", class: "bestseller-images flexible-image-2") %>
+        <div class="button-container button-container">
+          <button class="shop-now">SHOP NOW</button>
+          <% end %>
+        </div>
+      </div>
+      <div class="image-container">
+        <%= link_to light_editions_path do %>
+        <%= image_tag("light_image_3.png", class: "bestseller-images flexible-image-3") %>
+        <div class="button-container-3">
+            <button class="shop-now">SHOP NOW</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="lilac-section-2"></div>
+  <div class="d-flex flex-column" style="margin: 70px;">
+    <div class="d-flex">
+      <div class="container new-arrivals-container">
+        <div class="card new-arrivals-card">
+          <div class="card-body new-arrivals-card-body">
+            <%# <h5 class="card-title">Hello!</h5> %>
+            <%= image_tag("New Arrivals.png",class:"new-arrivals-sign") %>
+            <p class="card-text new-arrivals-card-text">Discover a curated collection of exquisite candles designed to elevate your ambiance and evoke moments of tranquility.
+              Each candle is a testament to our commitment to quality, sustainability, and the artistry of candle-making.
+              Indulge in the flickering glow of our candles and elevate every moment.</p>
+            <%= link_to candles_path do %>
+              <button class="shop-now">SHOP NOW</button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="new-arrival-candle d-flex justify-content-end">
+      <%= image_tag("new_arrival_candle_images.png", class:"new-arrival-image") %>
+    </div>
+    <div class="bubble-candle d-flex align-items-center">
+      <%= image_tag("bubble_candle.png", class:"bubble-image") %>
+    </div>
+  </div>
+  <div class="lilac-section-3"></div>
+  <div class="line-container">
+    <div class="line line-1"></div>
+      <div class="logo-container">
+        <%= image_tag("protect_your_energy_logo.png", class:"logo") %>
+      </div>
+    <div class="line line-2"></div>
+  </div>
 </div>
+<%= render 'shared/footer' %>

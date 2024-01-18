@@ -1,0 +1,37 @@
+.navbar-text {
+  font-family: 'Work Sans', sans-serif;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.home-btn {
+  color: #bc797a;
+  font-size: 17px;
+  transition: 2s;
+}
+
+.home-btn:hover {
+  color: #000000;
+}
+
+.navbar-collapse {
+  max-width: 50px;
+}
+
+.nav-container {
+  gap: 90px;
+}
+
+.navbar-options-text {
+  font-size: 17px;
+  transition: 2s;
+}
+
+.navbar-options-text:hover {
+  text-decoration: underline;
+}
+
+.navbar-brand {
+  width:30%;
+}

@@ -1,11 +1,11 @@
 <div>
-  <%= link_to "Back", :back %>
-  <div class="d-flex justify-space-between gap-3">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<%= link_to "Back", :back, style:"color: black; text-decoration: none; padding-left: 60px;" %>
+  <div class="d-flex justify-content-between">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width: 55%;">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <% @candle.images.each do |image| %>
-            <%= image_tag(image.url, class: "carousel-item d-block", alt: "Candle Image") %>
+            <%= image_tag(image.url, class: "candle-image carousel-item d-block", style: "padding-left: 300px;", alt: "Candle Image") %>
           <% end %>
         </div>
       </div>
@@ -18,7 +18,7 @@
     </div>
     <div class="d-flex candle-show">
       <div>
-        <h1 class="flex-item"><%= @candle.scent %></h1>
+        <h1 class="flex-item"><%= @candle.name %></h1>
         <p><%= number_to_currency(@candle.price, unit: '£')%></p>
       </div>
       <div>
@@ -32,5 +32,41 @@
       <%= button_to "Add to bag", line_items_path(candle_id: @candle), method: :post, class: "add-to-bag flex-item", remote: true %>
     </div>
   </div>
-  <h1>Reviews</h1>
+  <div class="container" style="padding-top: 150px;">
+    <h2 style="font-family: Work Sans">You may also like</h2>
+    <div id="productSlider">
+      <% other_candles = @candles.where(edition: @candle.edition).where.not(id: @candle) %>
+      <% other_candles.each do |candle| %>
+        <div class="product-item">
+          <%= link_to(candle) do %>
+            <div class="card text-center">
+              <% first_image = candle.images.first %>
+              <%= image_tag(first_image.url, class: "d-block", alt: "Candle Image") if first_image %>
+              <div class="card-body d-flex flex-column justify-content-evenly">
+                <h3 class="card-title"><%= candle.name %></h3>
+                <p class="card-title"><%= candle.scent %> <%= candle.size %></p>
+                <strong><%= number_to_currency(candle.price, unit: '£') %></strong><br>
+                <%# <p><%= candle.size</p> %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+    <script>
+      $(document).ready(function(){
+        $('#productSlider').slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          prevArrow: '<button type="button" style="transform: rotateY(190deg); " class="slick-prev">Previous</button>',
+          nextArrow: '<button type="button" style="" class="slick-next">Next</button>'
+        });
+      });
+    </script>
+  </div>
 </div>
+<%= render 'shared/footer' %>

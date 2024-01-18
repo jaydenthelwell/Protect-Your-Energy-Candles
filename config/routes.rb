@@ -1,15 +1,23 @@
 Rails.application.routes.draw do
-  resources :line_items
-  resources :carts
-  devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
+  resources :editions do
+    get 'light', on: :collection
+    get 'dark', on: :collection
   end
+  resources :candles, only: [:index, :show]
+  resources :line_items
+  resources :payments, only: [:show]
+  resources :checkouts, only: [:show]
+
+  resources :carts do
+    post 'checkout', on: :member
+  end
+
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
-  get 'users/new'
-
-  get 'users/create'
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 
   resources :users, only: [:show] do
     resources :addresses, except: [:show] do
@@ -17,25 +25,10 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :orders, only: [:new, :create, :show]
+  get 'users/new'
 
-  # resources :line_items do
-  #   member do
-  #     post 'add_quantity'
-  #     post 'reduce_quantity'
-  #   end
-  # # end
-
-  # resource :cart, only: [:show] do
-  #   post 'checkout', on: :member
-  # end
+  get 'users/create'
 
   root to: 'home#index'
 
-  resources :candles, only: [:index, :show]
-
-  resources :editions do
-    get 'light', on: :collection
-    get 'dark', on: :collection
-  end
 end

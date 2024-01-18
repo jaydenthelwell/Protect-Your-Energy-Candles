@@ -1,27 +1,84 @@
-<p style="color: green"><%= notice %></p>
-<%= render @cart %>
-
-<div class="container">
-  <h1>Shopping Cart</h1>
-
-  <% @cart.line_items.each do |item| %>
-  <div class="d-flex justify-space-between">
-    <%= item.candle.scent %>
-
-    <%= form_for(item, url: line_item_path(item), method: :patch, html: { class: 'quantity-form' }) do |form| %>
-      <div class="quantity-adjust">
-        <%= form.button '-', name: 'quantity_adjust', value: 'decrease', class: 'quantity-adjust-btn' %>
-        <%= form.text_field :quantity, class: 'quantity-input', size: item.quantity.to_s.length, style: "text-align: center;" %>
-        <%= form.button '+', name: 'quantity_adjust', value: 'increase', class: 'quantity-adjust-btn' %>
+<div class="cart-container">
+  <div>
+    <span class="basket-heading">Shopping Basket</span>
+    <span class="basket-quantity">[<%= "#{ @cart.line_items.sum(&:quantity) } #{'item'.pluralize(@cart.line_items.sum(&:quantity))}" %>]</span>
+    <p>The items in your basket are not reserved.</p>
+  </div>
+    <br>
+  <div class="basket-container d-flex justify-content-between">
+    <div class="d-flex flex-column gap-5">
+      <% @cart.line_items.each do |item| %>
+        <div class="card first-card flex-row">
+          <%= image_tag(item.candle.images.first.url, class: "card-img-left cart-image d-block", alt: "Candle Image") %>
+          <div class="card-body ">
+            <h2 class="card-title" style="font-weight: 700;"><%= item.candle.name %></h2>
+            <p class="card-text summary-totals" style="width: 300%;"><%= item.candle.scent %> <%= item.candle.size %></p>
+            <p class="card-text" style="font-weight: 700;"><%= number_to_currency(item.candle.price * item.quantity, unit: '£') %></p>
+            <%= form_for(item, url: line_item_path(item), method: :patch, html: { class: 'quantity-form' }) do |form| %>
+              <div>
+                <p >Quantity</p>
+                <div class="quantity-adjust">
+                  <%= form.button '-', name: 'quantity_adjust', value: 'decrease', class: 'quantity-adjust-btn' %>
+                  <%= form.text_field :quantity, class: 'quantity-input', size: item.quantity.to_s.length, style: "font-size: 21px; text-align: center;" %>
+                  <%= form.button '+', name: 'quantity_adjust', value: 'increase', class: 'quantity-adjust-btn' %>
+                </div>
+              </div>
+            <% end %>
+            <%= button_to line_item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'remove-button' do %>
+              <span class="visually-hidden">Remove</span>
+              <%= image_tag("close.png", class:"remove-item") %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% if @cart.line_items.any? %>
+    <div class="card second-card">
+      <div class="card-body second-card-body">
+        <h2 class="card-title">Summary</h2>
+        <div class="d-flex justify-content-between">
+          <p class="card-text summary-totals" style="left: 0;">Items total</p>
+          <% total_items_price = @line_items.sum { |item| item.candle.price * item.quantity } %>
+          <p class="card-text summary-totals" style="right: 0;"><%= number_to_currency(total_items_price, unit: '£') %></p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="card-text summary-totals">Delivery</p>
+          <p class="card-text summary-totals">£0.00</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="card-text summary-totals">TOTAL</p>
+          <p class="card-text summary-totals"><%= number_to_currency(total_items_price, unit: '£') %></p>
+        </div>
       </div>
-    <% end %>
-
-      <%= number_to_currency(item.candle.price * item.quantity, unit: '£') %>
-      <%= link_to 'Remove', line_item_path(item), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div>
+        <%= button_to "Proceed to Checkout", checkout_path(id: @line_items.first.candle_id), class: "add-to-bag flex-item"%>
+        <br>
+      </div>
+      <div style="display: flex; justify-content: center; color: black!important; text-decoration: underline;">
+        <%= link_to "Continue shopping", candles_path, style:"color: black!important;" %>
+        <br><br>
+      </div>
+      <div class="payments">
+        <%= image_tag("apple-pay.png", class:"payment-methods") %>
+        <%= image_tag("symbols.png", class:"payment-methods") %>
+        <%= image_tag("google-pay.png", class:"payment-methods") %>
+        <%= image_tag("card.png", class:"payment-methods") %>
+        <%= image_tag("amex.png", class:"payment-methods") %>
+        <%= image_tag("paypal.png", class:"payment-methods") %>
+      </div>
+    </div>
     <% end %>
   </div>
   <% if @cart.line_items.empty? %>
-    <p>!You have not added any items to your shopping bag</p>
+    <div style="padding: 40px; border: solid 3px rgb(197, 38, 38);; display: flex; flex-direction:column; justify-content: center; align-items: center;">
+    <i class="fa-solid fa-exclamation" style="color: #c52626; font-size: 40px;"></i><br>
+      <p style="font-size: 24px; color: rgb(197, 38, 38);">You have not added any items to your shopping bag.</p>
+      <br>
+      <div class="continue-shopping" style="display: flex; justify-content: center; align-items: center;">
+        <%= link_to "Continue shopping", candles_path, style:"color: white; font-size: 20px;" %>
+        <br><br>
+      </div>
+    </div>
   <% end %>
-<%# <%= link_to 'Proceed to Checkout', checkout_cart_path, class: 'btn btn-primary' %>
 </div>
+<%= render 'shared/footer'%>

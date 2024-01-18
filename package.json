@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "@hotwired/turbo-rails": "^8.0.0-beta.2",
+    "@rails/webpacker": "5.4.4",
+    "application.js": "^1.5.2",
+    "bootstrap": "^5.3.2",
+    "jquery": "^3.7.1",
+    "popper.js": "^1.16.1",
+    "stimulus": "^3.2.2"
+  },
+  "name": "pye-candles",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3"
+  },
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaydenthelwell/Protect-Your-Energy-Candles.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaydenthelwell/Protect-Your-Energy-Candles/issues"
+  },
+  "homepage": "https://github.com/jaydenthelwell/Protect-Your-Energy-Candles#readme"
+}

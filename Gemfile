@@ -23,6 +23,8 @@ gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
+
+
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
@@ -37,6 +39,8 @@ gem "redis", "~> 4.0"
 # Gemfile
 gem 'devise'
 
+gem 'font-awesome-rails'
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
@@ -50,6 +54,7 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 gem 'byebug'
 
+gem 'stripe'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 

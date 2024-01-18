@@ -1,0 +1,19 @@
+.alerts {
+  background-color: rgb(31, 31, 31);
+  position: fixed;
+  color: rgb(217 217 217);
+  width: 100%;
+  top: 0;
+}
+
+.light-alert,
+.dark-alert {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  margin:0;
+}
+
+.light-alert:not(.d-none),
+.dark-alert:not(.d-none) {
+  opacity: 1;
+}

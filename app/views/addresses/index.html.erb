@@ -2,30 +2,30 @@
   <h1>Your Addresses</h1>
   <%= link_to "Back", user_path(@user) %>
 
-  <% default_address = @user.addresses.find_by(default: true) || @addresses.first %>
-  <%= form_tag user_addresses_path(@user, id: default_address&.id), method: :post do %>
+  <% primary_address = @user.addresses.find_by(primary: true) %>
+  <%= form_tag user_addresses_path(@user, id: primary_address&.id), method: :post do %>
     <%= hidden_field_tag 'authenticity_token', form_authenticity_token %>
     <%= csrf_meta_tags %>
     <p>DEFAULT DELIVERY ADDRESS:</p>
-    <% if default_address %>
+    <% if primary_address %>
       <div>
-        <%= default_address.first_name %> <%= default_address.last_name %> <br>
-        <%= default_address.street %><br>
-        <%= default_address.city %><br>
-        <%= default_address.county %><br>
-        <%= default_address.postcode %><br>
-        <%= default_address.phone_number %>
+        <%= primary_address.first_name %> <%= primary_address.last_name %> <br>
+        <%= primary_address.street %><br>
+        <%= primary_address.city %><br>
+        <%= primary_address.county %><br>
+        <%= primary_address.postcode %><br>
+        <%= primary_address.phone_number %>
       </div>
     <% else %>
       <p>No default delivery address set.</p>
     <% end %>
     <br><br>
 
-    <div id="address">
+    <div class="d-none" id="address">
       <p>ALL OTHER ADDRESSES:</p>
       <% @addresses.each do |address| %>
         <%= form_with(url: set_default_user_address_path(@user, address), method: :post) do |form| %>
-          <%= hidden_field_tag 'authenticity_token', form_authenticity_token %>
+          <%# <%= hidden_field_tag 'authenticity_token', form_authenticity_token %>
           <%= csrf_meta_tags %>
           <div class="<%= address.default ? 'default-address' : 'non-default-address' %>">
             <%= address.first_name %> <%= address.last_name %> <br>
@@ -43,7 +43,25 @@
       <% end %>
     </div>
 
+    <div id="address">
+      <p>ALL OTHER ADDRESSES:</p>
+      <% @addresses.each do |address| %>
+        <div class="<%= address.default ? 'default-address' : 'non-default-address' %>">
+          <%= address.first_name %> <%= address.last_name %> <br>
+          <%= address.street %><br>
+          <%= address.city %><br>
+          <%= address.county %><br>
+          <%= address.postcode %><br>
+          <%= address.phone_number %>
+        </div>
+        <br><br>
+        <%= button_to "Set as Default", set_default_user_address_path(@user, address), method: :post, class: "btn #{address.primary ? 'btn-primary' : 'btn-outline-primary'}"%>
+        <%= button_to "Delete", user_address_path(@user, address), method: :delete, data: { confirm: "Are you sure you want to delete this address?" }, class: 'btn btn-danger' %>
+        <br><br>
+      <% end %>
+    </div>
     <br><br>
     <%= link_to 'Add Address', new_user_address_path(@user), class: 'btn btn-primary' %>
   <% end %>
 </div>
+<%= render 'shared/footer' %>

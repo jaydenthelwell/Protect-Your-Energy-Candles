@@ -1,0 +1,29 @@
+.main-image {
+  height: 60% !important;
+  padding-bottom: 100px;
+  padding-top: 50px;
+}
+
+.edition-title {
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+}
+
+p {
+  font-family: 'Bitter', serif;
+}
+
+.card-title {
+  font-family: 'Work Sans', sans-serif;
+}
+.quick-shop {
+  border: 1px solid black;
+  padding: 15px;
+  border-radius: 0;
+}
+
+.row {
+  justify-content: center;
+  gap: 70px;
+}

@@ -54,7 +54,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to cart_path(@cart), notice: "Quantity updated." }
+        format.html { redirect_to cart_path(@cart), notice: "Quantity updated."}
         format.json { render :show, status: :ok, location: @line_item }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -67,7 +67,7 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to cart_path(@cart), notice: "Line item was successfully destroyed." }
+      format.html { redirect_to cart_path(@cart), notice: "Item was successfully removed." }
       format.json { head :no_content }
     end
   end

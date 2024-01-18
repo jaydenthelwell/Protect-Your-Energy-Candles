@@ -1,6 +1,6 @@
 class Candle < ApplicationRecord
   before_destroy :not_referenced_by_any_line_item
-  validates :scent, :size, :date_made, :description, presence: true
+  validates :name, :scent, :size, :date_made, :description, presence: true
   validates :stock, :price, numericality: { greater_than_or_equal_to: 0 }
   belongs_to :edition
   has_many :line_items

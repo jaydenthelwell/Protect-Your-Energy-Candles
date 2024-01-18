@@ -1,0 +1,94 @@
+.cart-image {
+  width: 60%;
+}
+
+.cart-container{
+  padding-left: 130px;
+  padding-right: 80px;
+}
+
+.basket-heading {
+  font-family: "Work Sans", serif;
+  font-size: 35px;
+  margin-right: 8px;
+}
+
+.basket-quantity {
+  font-size: 20px;
+  font-family: "Bitter", serif;
+}
+
+.remove-button {
+  position: absolute;
+  top: 20px;
+  right: -800px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+}
+
+.remove-button:hover {
+  background-color: transparent;
+}
+
+.remove-item {
+  width: 5%;
+}
+
+.payment-methods{
+  width: 10%;
+  align-content: center;
+}
+
+.basket-container{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 500px;
+}
+
+.second-card {
+  height: 50%!important;
+}
+
+.second-card-body {
+  padding-bottom: 40px;
+}
+
+.payments {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.quantity-adjust-btn {
+  background-color: transparent;
+  border: solid 1px;
+  margin: 4px;
+  padding: 2px 10px;
+  font-size: 23px;
+}
+
+.quantity-input {
+  background-color: transparent;
+  border: solid 1px;
+  padding: 2px 10px;
+}
+
+.summary-totals {
+  font-size: 17px;
+}
+
+.continue-shopping {
+  background-color: black;
+  padding: 15px 30px;
+  /* font-weight: 700; */
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-align: center;
+  border: 0;
+}

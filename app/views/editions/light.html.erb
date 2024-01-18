@@ -1,8 +1,12 @@
 <div>
-  <h1>Light Candles</h1>
-  <p>Immerse yourself in the luxury of our handcrafted candles, meticulously designed for serenity and energy protection. Each creation is a testament to our commitment, crafted with care in the heart of England to elevate your senses and bring an enchanting ambiance to your space.</p>
-  <%= image_tag("light_edition.jpeg", alt: "Candles", class:"w-100 main-image") %>
-  <div class="container">
+  <div class="d-flex justify-content-between"style="gap: 30px; flex-direction: column; text-align: center;">
+    <h1 class="edition-title">Luminous Candles</h1>
+    <p>Indulge in the serene scents, thoughtfully curated for relaxation and energy protection. Elevate your surroundings, embracing the enchanting ambiance that our handcrafted <br>candles effortlessly bring to your space.</p>
+    <br>
+  </div>
+  <div>
+  <%# <%= image_tag("light_edition.jpeg", alt: "Candles", class:"w-100 main-image") %>
+  <div class="container container-candles">
     <div class="row gx-5">
       <% @candles.each do |candle| %>
         <div class="col-md-6 col-lg-3 mb-4">
@@ -24,10 +28,11 @@
                 </a>
               </div>
               <div class="card-body">
-                <h3 class="card-title"><%= candle.scent %></h3>
-                <p><%= number_to_currency(candle.price, unit: '£') %></p>
+                <h3 class="card-title"><%= candle.name %></h3>
+                <p class="card-title"><%= candle.scent %></p>
+                <strong><%= number_to_currency(candle.price, unit: '£') %></strong><br><br>
                 <p><%= candle.size %></p>
-                <a href="#" class="btn">Quick Shop</a>
+                <%# <a href="#" class="btn">Quick Shop</a> %>
               </div>
             </div>
           <% end %>
@@ -36,3 +41,4 @@
     </div>
   </div>
 </div>
+<%= render 'shared/footer' %>

@@ -2,31 +2,63 @@
   background-color: black;
   padding: 30px 132px;
   width: 100%;
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   text-align: center;
+  border: 0;
 }
-/* .add-to-bag::hover {
-  text-decoration: none;
-} */
+
 .candle-show {
   flex-flow: column wrap;
-  /* justify-content: space-between; */
-  gap: 150px;
-  max-width: 25%;
+  gap: 100px;
+  max-width: 30%;
+  padding-right: 150px;
 }
 
-/* .flex-item {
-  width: 100%;
-} */
-
-/* In your application.css or application.scss file */
 .badge {
-  background-color: red; /* or your desired background color */
-  color: white; /* or your desired text color */
+  color: white;
   border-radius: 50%;
   padding: 0.2em 0.5em;
   position: absolute;
-  top: 0;
-  right: 0;
+}
+
+.candle-image {
+  width: 100%;
+}
+
+.slick-prev, .slick-next {
+  font-size: 18px;
+  color: #000;
+}
+
+.slick-prev {
+  left: -140px!important;
+  top: 200px!important;
+  font-size: 40px;
+}
+
+.slick-next {
+  right: -140px!important;
+  top: 200px!important;
+  font-size: 40px;
+}
+
+.slick-next:before {
+  content: "\27A4"!important;
+  color: black !important;
+  font-size: 40px!important;
+}
+.slick-prev:before {
+  content: '\27A4'!important;
+  transform: rotateY('180deg')!important;
+  color: black!important;
+  font-size: 40px!important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.slick-slide img {
+  margin: 50px!important;
 }

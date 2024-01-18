@@ -22,10 +22,9 @@ class AddressesController < ApplicationController
       @address = @user.addresses.build(address_params)
 
       if params[:address][:default] == '1'
-        @user.addresses.update_all(default: false)
-        @address.default = true
+        @user.set_primary_address(@address)
       elsif @user.addresses.empty?
-        @address.default = true
+        @address.primary = true
       end
 
       if @address.save
@@ -44,16 +43,12 @@ class AddressesController < ApplicationController
     Rails.logger.debug("Params: #{params.inspect}")
     @address = current_user.addresses.find(params[:id])
 
-    current_user.addresses.update_all(default: false)
+    @user.set_primary_address(@address)
 
-    if @address.update(default: true)
-      flash[:notice] = "Default address set successfully."
-    else
-      flash[:alert] = "Failed to set default address. Errors: #{@address.errors.full_messages.to_sentence}"
+    respond_to do |format|
+      format.html { redirect_to user_addresses_path(@user), notice: 'Default address set successfully.' }
+      format.js
     end
-    @user.reload
-
-    redirect_to user_addresses_path(current_user)
   end
 
 
