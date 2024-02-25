@@ -11,11 +11,12 @@
 }
 
 p {
-  font-family: 'Bitter', serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
 .card-title {
   font-family: 'Work Sans', sans-serif;
+  letter-spacing:3px;
 }
 .quick-shop {
   border: 1px solid black;

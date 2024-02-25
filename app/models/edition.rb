@@ -2,15 +2,15 @@ class Edition < ApplicationRecord
   has_many :candles
   validates :name, presence: true
 
-  LIGHT_EDITION_NAME = 'Light Edition'.freeze
+  CANDLE_SHOP_NAME = 'Candle Shop'.freeze
 
-  def self.light_edition
-    find_or_create_by(name: LIGHT_EDITION_NAME)
+  def self.candle_shop
+    find_or_create_by(name: CANDLE_SHOP_NAME)
   end
 
-  DARK_EDITION_NAME = 'Dark Edition'.freeze
+  ESSENTIALS_NAME = 'Essentials'.freeze
 
-  def self.dark_edition
-    find_or_create_by(name: DARK_EDITION_NAME)
+  def self.essentials
+    find_or_create_by(name: ESSENTIALS_NAME)
   end
 end

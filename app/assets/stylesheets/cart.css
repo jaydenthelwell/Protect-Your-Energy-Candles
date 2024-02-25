@@ -15,7 +15,7 @@
 
 .basket-quantity {
   font-size: 20px;
-  font-family: "Bitter", serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
 .remove-button {
@@ -91,4 +91,15 @@
   text-decoration: none;
   text-align: center;
   border: 0;
+}
+
+.proceed-to-checkout {
+  background-color: black;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-align: center;
+  border: 0;
+  width: 100%;
+  padding: 30px 0px;
+
 }

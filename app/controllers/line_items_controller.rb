@@ -54,7 +54,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to cart_path(@cart), notice: "Quantity updated."}
+        format.html { redirect_to cart_path(@cart)}
         format.json { render :show, status: :ok, location: @line_item }
       else
         format.html { render :edit, status: :unprocessable_entity }

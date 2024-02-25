@@ -17,5 +17,4 @@ class Candle < ApplicationRecord
       throw :abort
     end
   end
-  # monetize :price_pounds, as: "price", with_currency: :gbp, numericality: { greater_than_or_equal_to: 0 }, :allow_nil => true
 end

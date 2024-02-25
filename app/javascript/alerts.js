@@ -9,13 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentIndex = 0;
 
     setInterval(function () {
-      // Hide all alerts
       alerts.forEach(alert => alert.classList.add("d-none"));
 
-      // Display the current alert
       alerts[currentIndex].classList.remove("d-none");
 
-      // Move to the next alert or loop back to the first one
       currentIndex = (currentIndex + 1) % alerts.length;
     }, 4000);
   }
@@ -37,7 +34,8 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Clicking close");
         alerts.classList.add("d-none");
         console.log(alerts.classList);
-        navbar.style.paddingTop = ""
+        navbar.style.paddingTop = "0px"
+        navbar.style.paddingBottom = "0px"
         basketNumber.style.top = "30px"
       }
     });

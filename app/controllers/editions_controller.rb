@@ -1,10 +1,10 @@
 class EditionsController < ApplicationController
-  def light
-    @candles = Candle.where(edition: Edition.light_edition)
-    render 'light'
+  def candle_shop
+    @candles = Candle.where(edition: Edition.candle_shop)
+    render 'candle_shop'
   end
-  def dark
-    @candles = Candle.where(edition: Edition.dark_edition)
-    render 'dark'
+  def essentials
+    @candles = Candle.where(edition: Edition.essentials)
+    render 'essentials'
   end
 end

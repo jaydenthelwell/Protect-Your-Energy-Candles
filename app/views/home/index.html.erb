@@ -1,98 +1,143 @@
 <div class="landing-container">
-  <%# <div class="alerts">
-  </div> %>
-  <div style="position: relative; display: flex; align-items: center; justify-content: center; border: white;">
-    <%= image_tag("landing_page_image.png", class:"landing_page_image") %>
-    <div style="position: absolute;
-    z-index: 2;
-    color: #FFF6EA;
-    font-family: 'Work Sans', sans-serif;
-    top: 10%;
-    right: 73%;"><h4>100% Natural Soy Candles</h4></div>
-  </div>
-  <div class="lilac-section"></div>
-  <div class="container description-container">
-    <div class="card description-card">
-      <div class="card-body description-card-body">
-        <%# <h5 class="card-title">Hello!</h5> %>
-        <%= image_tag("glow-in-peace.png", class: "peace-phrase") %>
-        <p class="card-text description-card-text">Discover a curated collection of exquisite candles designed to elevate your ambiance and evoke moments of tranquility.
-          Each candle is a testament to our commitment to quality, sustainability, and the artistry of candle-making.
-          Indulge in the flickering glow of our candles and elevate every moment.</p>
-        <%= link_to candles_path do %>
-          <button class="shop-now">SHOP NOW</button>
-        <% end %>
+  <div class="main-landing-image">
+      <%= image_tag("floral_landing_page.png", class:"landing_page_image") %>
+      <div class="butterfly">
+        <%= image_tag("butterfly.png", class:"butterfly-left")%>
+        <%= image_tag("butterfly.png", class:"butterfly-right")%>
       </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="d-flex justify-content-center align-items-center" style="flex-direction: column; text-align: center; height: 40vh; gap: 40px">
-      <%# <div> %>
-        <%= image_tag("bestsellers.png", class: "bestsellers-image") %>
-        <p style="padding-left: 40px; padding-right: 40px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis dolor quis neque semper, sollicitudin porta ante congue. Duis massa lacus, fermentum quis consectetur quis, aliquet sit amet metus. Pellentesque ac sagittis nisi.</p>
-      <%# </div> %>
-    </div>
-  </div>
-  <div class="images-container">
-    <div class="d-flex justify-content-evenly" style="gap: 40px;">
-      <div class="image-container">
-        <%= link_to light_editions_path do %>
-        <%= image_tag("light_image_1.png", class: "bestseller-images flexible-image-1") %>
-        <div class="button-container-1">
-            <button class="shop-now">SHOP NOW</button>
-          <% end %>
-        </div>
-      </div>
-      <div class="image-container">
-        <%= link_to light_editions_path do %>
-        <%= image_tag("light_image_2.png", class: "bestseller-images flexible-image-2") %>
-        <div class="button-container button-container">
-          <button class="shop-now">SHOP NOW</button>
-          <% end %>
-        </div>
-      </div>
-      <div class="image-container">
-        <%= link_to light_editions_path do %>
-        <%= image_tag("light_image_3.png", class: "bestseller-images flexible-image-3") %>
-        <div class="button-container-3">
-            <button class="shop-now">SHOP NOW</button>
-          <% end %>
+    <div class="container description-container">
+      <div class="card description-card">
+        <div class="card-body description-card-body">
+          <%= image_tag("candella_sparks_logo.png", class:"candella-sparks") %>
         </div>
       </div>
     </div>
   </div>
-  <div class="lilac-section-2"></div>
-  <div class="d-flex flex-column" style="margin: 70px;">
-    <div class="d-flex">
-      <div class="container new-arrivals-container">
-        <div class="card new-arrivals-card">
-          <div class="card-body new-arrivals-card-body">
-            <%# <h5 class="card-title">Hello!</h5> %>
-            <%= image_tag("New Arrivals.png",class:"new-arrivals-sign") %>
-            <p class="card-text new-arrivals-card-text">Discover a curated collection of exquisite candles designed to elevate your ambiance and evoke moments of tranquility.
-              Each candle is a testament to our commitment to quality, sustainability, and the artistry of candle-making.
-              Indulge in the flickering glow of our candles and elevate every moment.</p>
-            <%= link_to candles_path do %>
-              <button class="shop-now">SHOP NOW</button>
+  <div class="gradient d-flex align-items-center justify-content-center">
+    <div class="shop-our-essentials">
+      <h1 class="essentials">shop our essentials</h1>
+      <div class="d-flex justify-content-center flex-column">
+        <div class="essentials-cards">
+          <div class=" essentials-container d-flex flex-row justify-content-center">
+            <% @candles_essentials.each do |candle| %>
+              <div class="product-item mx-3">
+                <%= link_to(candle) do %>
+                  <div class="card products text-center" style="font-weight:300;">
+                    <% first_image = candle.images.first %>
+                    <%= image_tag(first_image.url, class: "image-container", alt: "Candle Image") if first_image %>
+                    <div class="card-body candle-body d-flex flex-column justify-content-evenly">
+                      <h3 class="candle-name"><%= candle.name %></h3>
+                      <p class="scent-size"><%= candle.scent %></p>
+                      <strong><%= number_to_currency(candle.price, unit: '£') %></strong><br>
+                    </div>
+                    <%= link_to candles_path(@candles_essentials) do %>
+                      <button class="button">Add to Bag</button>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
             <% end %>
           </div>
         </div>
+        <div>
+          <%= link_to candles_path(@candles_essentials) do %>
+            <p class="view-all">view all</p>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <div class="new-arrival-candle d-flex justify-content-end">
-      <%= image_tag("new_arrival_candle_images.png", class:"new-arrival-image") %>
-    </div>
-    <div class="bubble-candle d-flex align-items-center">
-      <%= image_tag("bubble_candle.png", class:"bubble-image") %>
     </div>
   </div>
-  <div class="lilac-section-3"></div>
-  <div class="line-container">
-    <div class="line line-1"></div>
-      <div class="logo-container">
-        <%= image_tag("protect_your_energy_logo.png", class:"logo") %>
+  <div class="create-your-own d-flex flex-row gap-5" style="background-color: #9FBFD4;">
+    <div class="d-flex justify-content-evenly body-card flex-column align-items-center">
+      <h1 class="card-title build-candles">CREATE YOUR OWN</h1>
+      <p class="description-text main-color">For just £25, craft your perfect candle, tailored to your preferences and packaged to deliver both scents and smiles. Simply select your preferred scents in order of strength, and choose your desired candle holder colour.</p>
+      <a href="#" class="button">Create</a>
+    </div>
+    <div class="img-container">
+      <%= image_tag("candles-sunset-background.png", class:"sunset-candles-image float-left", alt:"Soy Candles in coloured holders: pink, green, blue, on a window sill, looking over a pink/orange sunset and bright green fields") %>
+    </div>
+  </div>
+  <div class="reviews">
+    <div class="reviews-text">
+      <p class="description-text text-center">"Absolutely obsessed with these candles! The scents are divine and fill my room with such calming vibes. I love that they're handmade in England with natural ingredients - it's like a little slice of zen in every burn."</p>
+      <p class="handwriting text-center">- Emily P., satisfied customer</p>
+    </div>
+    <div>
+    <%= image_tag("flower-background.png", class: "flowers flower1") %>
+    <%= image_tag("flower-background.png", class: "flowers flower2") %>
+    <%= image_tag("flower-background.png", class: "flowers flower3") %>
+    <%= image_tag("flower-background.png", class: "flowers flower4") %>
+    <%= image_tag("flower-background.png", class: "flowers flower5") %>
+    <%= image_tag("flower-background.png", class: "flowers flower6") %>
+    <%= image_tag("flower-background.png", class: "flowers flower7") %>
+    <%= image_tag("flower-background.png", class: "flowers flower8") %>
+    <%= image_tag("flower-background.png", class: "flowers flower9") %>
+    <%= image_tag("flower-background.png", class: "flowers flower10") %>
+    <%= image_tag("flower-background.png", class: "flowers flower11") %>
+    </div>
+  </div>
+  <div class="let-your-light-shine d-flex flex-row gap-5" style="background-color: #F1CCE5;">
+    <div class="d-flex justify-content-center body-card flex-column align-items-center text-center gap-4">
+      <h1 class="card-title light-shine build-candles">let your light shine</h1>
+      <p class="description-text">Our wildly effervescent candles are handcrafted with invigorating scents and vibrant hues adding a touch of joy and energy to your self-care routine by igniting your senses and creating a soothing atmosphere.</p>    </div>
+    <div class="light-img-container">
+      <%= image_tag("smiling.png", class:"light-shine-img", alt:"Soy Candles in coloured holders: pink, green, blue, on a window sill, looking over a pink/orange sunset and bright green fields") %>
+    </div>
+  </div>
+  <div class="top-content">
+    <div class="container-fluid">
+      <div id="carousel-example" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner row w-100 mx-auto" role="listbox">
+          <% candles = @candles_candle_shop %>
+          <% candles.each do |candle| %>
+            <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+              <%= link_to(candle) do %>
+                <div class="card products text-center">
+                  <% first_image = candle.images.first %>
+                  <%= image_tag(first_image.url, class: "image-container d-block img-fluid mx-auto d-block", alt: "Candle Image") if first_image %>
+                  <div class="card-body d-flex flex-column justify-content-evenly">
+                    <h3 class="card-title"><%= candle.name %></h3>
+                    <p class=""><%= candle.scent %><br><%= candle.size %></p>
+                    <strong><%= number_to_currency(candle.price, unit: '£') %></strong><br>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
       </div>
-    <div class="line line-2"></div>
+    </div>
+  </div>
+  <div class="let-your-light-shine d-flex flex-row gap-5" style="background-color: #9FBFD4;">
+    <div class="light-img-container">
+      <%= image_tag("candle-cobble-street.png", class:"light-shine-img", alt:"Soy Candles, white and pink, on a cobble street with purple and blue flowers") %>
+    </div>
+    <div class="d-flex justify-content-center body-card flex-column align-items-center text-center gap-4">
+      <div class="text-center">
+        <h1 class="card-title build-candles">made with love</h1>
+        <p class="handwriting main-color">- handcrafted in England</p>
+      </div>
+      <p class="description-text main-color">Our candles are lovingly handcrafted in England, using only the finest soy wax and 100% natural ingredients, including essential oils. As a mindful and vegan brand, we prioritise sustainability and ethical sourcing. Our vibrant candles come in pink, blue, and green, as we believe colour brings joy and positivity to your space. Each scent is meticulously chosen to protect your energy and create a peaceful vibes in your bedroom.</p>
+      <a href="#" class="button mb-5">About us</a>
+    </div>
+  </div>
+  <div class="gradient d-flex align-items-center justify-content-center">
+    <div class="d-flex justify-content-center body-card flex-column align-items-center text-center gap-4 m-5">
+      <div class="d-flex align-items-center justify-content-center gap-5 planet">
+        <h1 class="card-title light-shine save-planet-title">HELP US SAVE OUR PLANET</h1>
+        <%= image_tag("wwf.png", class:"wwf") %>
+      </div>
+      <p class="save-planet-text">At Candella Sparks, we're passionate about giving back to the planet and its precious inhabitants. That's why we're proud to donate 5% of every purchase to the World Wildlife Fund (WWF), supporting their vital work in protecting endangered species and preserving our natural world. Help us save our animals with every candle you purchase!</p>
+      <a href="#" class="button">Donate now</a>
+    </div>
   </div>
 </div>
 <%= render 'shared/footer' %>

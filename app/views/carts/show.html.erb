@@ -51,7 +51,7 @@
         </div>
       </div>
       <div>
-        <%= button_to "Proceed to Checkout", checkout_path(id: @line_items.first.candle_id), class: "add-to-bag flex-item"%>
+        <%= button_to "Proceed to Checkout", checkout_path(id: @line_items.first.candle_id), method: :get, class: "proceed-to-checkout flex-item"%>
         <br>
       </div>
       <div style="display: flex; justify-content: center; color: black!important; text-decoration: underline;">

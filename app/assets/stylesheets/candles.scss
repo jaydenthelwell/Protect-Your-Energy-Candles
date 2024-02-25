@@ -1,0 +1,25 @@
+body.candles.show {
+  .slick-prev, .slick-next {
+    font-size: 18px;
+    color: #000;
+  }
+
+  .slick-prev {
+    top: 200px!important;
+    left: -140px!important;
+  }
+
+  .slick-next {
+    top: 200px!important;
+    right: -140px!important;
+  }
+
+
+  .slick-next:before {
+    color: black !important;
+  }
+
+  .slick-prev:before {
+    color: black!important;
+  }
+}

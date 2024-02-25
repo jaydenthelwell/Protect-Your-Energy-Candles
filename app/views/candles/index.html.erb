@@ -14,7 +14,7 @@
     <br>
   </div>
     <div class="row gx-5">
-      <% @candles.where(edition: Edition.light_edition).each do |candle| %>
+      <% @candles.each do |candle| %>
         <div class="col-md-6 col-lg-3 mb-4">
           <%= link_to(candle) do %>
             <div class="card text-center">
@@ -46,44 +46,5 @@
       <% end %>
     </div>
   <div class="container container-candles">
-  <div>
-    <h1 style="font-family: 'Work Sans', sans-serif;">nocturna</h1>
-    <br>
-    <p style="font-family: Bitter, serif;">an alluring collection of candles, each a tribute to introspection and the art of crafting an entrancing ambiance. Crafted with scents that embrace mystery and warmth, these candles invite you to explore the beauty within darkness, fostering self-reflection and establishing a sanctuary for deep connection with your inner self.</p>
-    <br>
-  </div>
-    <div class="row gx-5">
-      <% @candles.where(edition: Edition.dark_edition).each do |candle| %>
-        <div class="col-md-6 col-lg-3 mb-4">
-          <%= link_to(candle) do %>
-            <div class="card text-center">
-              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <% candle.images.each do |image| %>
-                      <%= image_tag(image.url, class: "card-img-top carousel-item d-block", alt: "Candle Image") %>
-                    <% end %>
-                  </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </a>
-              </div>
-              <div class="card-body">
-                <h3 class="card-title"><%= candle.name %></h3>
-                <p><%= candle.scent %></p>
-                <strong><%= number_to_currency(candle.price, unit: '£') %></strong><br><br>
-                <p><%= candle.size %></p>
-                <%# <a href="#" class="btn quick-shop">Preview</a> %>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  </div>
 </div>
 <%= render 'shared/footer' %>

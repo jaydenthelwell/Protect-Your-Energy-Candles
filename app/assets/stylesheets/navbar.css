@@ -1,3 +1,21 @@
+.navbar {
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  padding: 40px;
+  background-color: #FFF6EA;
+  width: 100%;
+  padding-bottom: 0;
+  position: sticky;
+}
+
+.item-count{
+  background-color: #e75f5f;
+  top: 60px;
+  right: 20px;
+}
+
 .navbar-text {
   font-family: 'Work Sans', sans-serif;
   color: black;
@@ -34,4 +52,125 @@
 
 .navbar-brand {
   width:30%;
+}
+
+.pye-logo {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-options {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .navbar {
+    position: sticky;
+    padding: 65px 0px 35px 0px;
+  }
+
+  .options {
+    display: none;
+  }
+
+  .navbar>.container-fluid {
+    display: grid !important;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+
+  .nav-icons {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .nav-options {
+    display: visible;
+  }
+
+  .pye-logo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position:absolute;
+    z-index: -1;
+  }
+
+  .navbar-brand {
+    width:45%;
+  }
+
+  .basket-profile {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .item-count {
+    top: 60px;
+    right: 0;
+  }
+}
+
+.navbar-toggler {
+  border: none!important;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.navbar-text {
+  text-align: left;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #D4A4A5;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
+.sidebar .closebtn {
+  color: #818181;
+  position: absolute;
+  top: 30px;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
 }

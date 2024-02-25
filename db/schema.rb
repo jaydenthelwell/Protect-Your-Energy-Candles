@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_12_124829) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_22_114901) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "blob_id", null: false
+    t.integer "record_id", null: false
+    t.integer "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -34,7 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_12_124829) do
   end
 
   create_table "active_storage_variant_records", force: :cascade do |t|
-    t.bigint "blob_id", null: false
+    t.integer "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
@@ -94,6 +94,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_12_124829) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity", default: 1
+    t.decimal "unit_price"
+    t.integer "order_id"
     t.index ["candle_id"], name: "index_line_items_on_candle_id"
     t.index ["cart_id"], name: "index_line_items_on_cart_id"
   end
@@ -104,6 +106,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_12_124829) do
     t.string "status", default: "0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "line_item_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -135,7 +138,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_12_124829) do
   add_foreign_key "candles", "editions"
   add_foreign_key "images", "candles"
   add_foreign_key "line_items", "candles"
-  add_foreign_key "line_items", "carts"
   add_foreign_key "reviews", "candles"
   add_foreign_key "reviews", "users"
 end
