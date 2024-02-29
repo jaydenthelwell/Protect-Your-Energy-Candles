@@ -104,7 +104,7 @@ body {
 .new-arrivals-card {
   position: absolute;
   left: 10%;
-  background-color: rgba(255,246,234);
+  background-color: rgba(255, 246, 234, 1);
   border: none;
   width: 40%;
 }
@@ -121,6 +121,10 @@ body {
   font-size: 21px;
   font-family: 'Work sans', sans-serif;
   font-weight: 300;
+}
+
+.font {
+  font-family: "Nixie One", system-ui;
 }
 
 .description-card-title {
@@ -279,6 +283,41 @@ body {
   padding-right: 10%;
 }
 
+.product-item {
+  margin: 30px;
+}
+
+.slick-prev {
+  transform: rotateY(180deg)!important;
+}
+
+.slick-prev, .slick-next {
+  top: 30%!important;
+}
+
+.slick-dots {
+  bottom: 10%!important;
+}
+
+.product-slider-container {
+  background-color: white;
+}
+
+.product-slider-card {
+  display: flex;
+  justify-content: center;
+}
+
+.pd-top-5 {
+  padding-top: 5%;
+}
+
+#productSlider {
+  margin: 0px 5% 0 5%;
+  background-color: white;
+  padding-bottom: 5%;
+}
+
 .handwriting {
   font-family: "Dancing Script", cursive;
   font-optical-sizing: auto;
@@ -355,6 +394,13 @@ body {
 }
 
 .image-container {
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  border: solid 2px black;
+  border-radius: 30px;
+}
+
+.slider-image {
   transition: transform 0.3s ease-in-out;
   width: 100%;
   border: solid 2px black;
@@ -649,8 +695,12 @@ body {
   left: 10%;
 }
 
+.m-10 {
+  margin: 10rem;
+}
+
 .gradient {
-  background-image: linear-gradient(to bottom right, #B75CB5, #EFECFC, #9FBFD4 );
+  background-image: linear-gradient(to bottom right, #F1CCE5, #FFFFFF, #94D5FF );
 }
 
 .butterfly-right {
@@ -679,11 +729,181 @@ body {
   justify-content: flex-start;
 }
 
-.slick-track {
-  transform: translate3d(0px, 0px, 0px)!important;
+@media only screen and (max-width: 500px) {
+  .essentials {
+    font-size: 30px!important;
+    margin-top: 2rem;
+  }
+  .build-candles {
+    font-size: 30px!important;
+    margin-top: 0%!important;
+  }
+  .description-text {
+    font-size: 15px!important;
+    line-height: 20px!important;
+  }
+
+  .light-shine {
+    font-size: 30px!important;
+  }
+
+  .save-planet-title {
+    font-size: 30px!important;
+  }
+}
+
+@media only screen and (max-width: 665px) {
+  .candella-sparks {
+    width: 50%!important;
+  }
+}
+
+@media only screen and (min-width: 665px) and (max-width: 810px) {
+  .slider-image {
+    width: 100%!important;
+  }
+
+  .wwf {
+    width: 10%!important;
+  }
+}
+
+@media only screen and (min-width: 810px) and (max-width: 1000px) {
+  .build-candles {
+    margin-top: 0!important;
+  }
+  .font {
+    font-size: 10px!important;
+  }
+
+  .wwf {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 667px) and (max-width: 1000px) {
+  .essentials-container {
+    gap: 2%!important;
+  }
+
+  .card-title {
+    font-size: 20px!important;
+  }
+
+  .add-to-bag{
+    padding: 7px 20px!important;
+    font-size: 10px!important;
+  }
+
+  .scent-size {
+    font-size: 10px!important;
+  }
+
+  .view-all {
+    margin-top: 0%!important;
+  }
+/*
+  .text-container {
+    width: 150px;
+  } */
+
+  .candle-name {
+    font-size: 18px;
+    clear: both;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+
+  .essentials-cards {
+    margin: 0% 0%;
+  }
+
+  .mx-3 {
+    margin-right: 0rem!important;
+    margin-left: 0rem!important;
+    overflow: hidden;
+    text-align: center;
+    height: 350px;
+  }
+
+  .scent-size {
+    font-size: 10px;
+    clear: both;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1366px) {
+  .add-to-bag{
+    padding: 7px 20px!important;
+    font-size: 10px!important;
+  }
+
+  .candle-name {
+    font-size: 23px;
+  }
+
+  .scent-size {
+    font-size: 15px;
+  }
+
+  .view-all {
+    margin-top: 0%!important;
+  }
+/*
+  .text-container {
+    width: 150px;
+  } */
+
+  .candle-name {
+    font-size: 18px;
+    clear: both;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+
+  .essentials-cards {
+    margin: 0% 0%;
+  }
+
+  .mx-3 {
+    margin-right: 0rem!important;
+    margin-left: 0rem!important;
+    overflow: hidden;
+    text-align: center;
+    height: 420px;
+  }
+
+  .scent-size {
+    font-size: 10px;
+    clear: both;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+}
+
+@media only screen and (max-width: 666px) {
+  .essentials-container {
+    flex-wrap: wrap!important;
+    gap: 30px!important;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
+
+  .slick-dots li {
+    margin: 0!important;
+  }
+
   .butterfly-left {
     display: none;
   }
@@ -696,13 +916,13 @@ body {
     flex-wrap: wrap;
   }
 
-  .candella-sparks {
-    width: 80%;
+  .m-10 {
+    margin: 5rem 2rem;
   }
 
-  .view_all {
-    margin-top: 10%;
-  }
+  /* .candella-sparks {
+    width: 50%;
+  } */
 
   .butterfly-right {
     display: none;
@@ -711,6 +931,16 @@ body {
   .r-cards {
     display: flex;
     flex-direction: column;
+  }
+
+  .slick-next {
+    right: -10px!important;
+    z-index: 20!important;
+  }
+
+  .slick-prev {
+    left: -10px!important;
+    z-index: 20!important;
   }
 
   .card {
@@ -729,10 +959,6 @@ body {
     padding: 0%;
   }
 
-  .most-loved-content {
-    font-size: 17px;
-  }
-
   .new-arrivals-card {
     width: 100%;
     left: 0;
@@ -746,6 +972,10 @@ body {
     overflow: hidden;
   }
 
+  .slider-image {
+    width: 140%;
+  }
+
   .learn-more {
     padding: 10px 30px;
   }
@@ -754,14 +984,10 @@ body {
     width: 100%;
   }
 
-  .discover-content {
-    font-size: 16px;
-  }
-
   .view-all {
-    margin-top: 20%;
-    margin-bottom: 20%;
-  }
+    margin-top: 10%;
+    font-size: 1rem;
+    }
 
   .essentials {
     font-size: 40px;
@@ -772,10 +998,13 @@ body {
   }
 
   .description-text {
-    font-size: 20px;
+    font-size: 15px;
     line-height: 25px;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 0rem 1rem 1rem 1rem;
+  }
+
+  .handwriting {
+    font-size: 15px;
   }
 
   .build-candles {
@@ -809,21 +1038,28 @@ body {
     margin: 0;
   }
 
-  .essentials-container {
-    flex-wrap: wrap;
-    gap: 30px;
+  .body-card {
+    margin: 2rem 0 0 0;
   }
 
   .flex-wrap {
     flex-wrap: wrap;
   }
 
+  .light-shine {
+    font-size: 40px;
+  }
+
   .flexend {
-    justify-content: center;
+    justify-content: end;
   }
 
   .flexstart {
     justify-content: center;
+  }
+
+  .pd-top-5 {
+    padding-top: 4rem;
   }
 
   .boxes {
@@ -852,9 +1088,265 @@ body {
   }
 
   .save-planet-text {
-    font-size: 20px;
+    font-size: 15px;
     line-height: 25px;
     padding-left: 0%;
     padding-right: 0%;
+  }
+}
+
+@media only screen and (min-width: 667px) and (max-width: 740px) {
+  .candle-name {
+      font-size: 16px!important;
+  }
+
+  .view-all {
+    margin-top: -8%!important;
+  }
+}
+
+@media only screen and (width: 768px){
+  .slider-image {
+    width: 140%!important;
+  }
+
+  .card-title {
+    font-size: 18px!important;
+  }
+}
+
+@media only screen and (width: 1024px){
+  .description-text {
+    font-size: 17px;
+    letter-spacing: 3px;
+    line-height: 22px;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  .handwriting {
+    font-size: 19px;
+  }
+
+  .padding-2rem {
+    margin-right: 2rem;
+  }
+
+  .body-card {
+    margin-left: 3%;
+  }
+
+  .img-container {
+    width: 70%;
+  }
+
+  .build-candles {
+    font-size: 50px;
+  }
+
+  .m-10 {
+    margin: 5rem;
+  }
+
+  .save-planet-text {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  .light-shine {
+    font-size: 50px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+  }
+
+  .help-title {
+    font-size: 15px;
+  }
+
+  .footer-line {
+    width: 90%;
+  }
+
+  .footer-links {
+    left: 5%;
+  }
+
+  .footer-socials {
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  .socials {
+    width: 4%;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1180px){
+  .description-text {
+    font-size: 17px;
+    letter-spacing: 3px;
+    line-height: 22px;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  .handwriting {
+    font-size: 19px;
+  }
+
+  .padding-2rem {
+    margin-right: 2rem;
+    margin-top: 2rem;
+  }
+
+  .body-card {
+    margin-left: 3%;
+  }
+
+  .img-container {
+    width: 70%;
+  }
+
+  .build-candles {
+    font-size: 50px;
+  }
+
+  .m-10 {
+    margin: 5rem;
+  }
+
+  .save-planet-text {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  .light-shine {
+    font-size: 50px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+  }
+
+  .help-title {
+    font-size: 15px;
+  }
+
+  .footer-line {
+    width: 90%;
+  }
+
+  .footer-links {
+    left: 5%;
+  }
+
+  .footer-socials {
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  .socials {
+    width: 4%;
+  }
+}
+
+@media only screen and (min-width: 1190px) and (max-width: 1366px){
+  .description-text {
+    letter-spacing: 3px;
+    line-height: 27px;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  .handwriting {
+    font-size: 19px;
+  }
+
+  .padding-2rem {
+    margin-right: 2rem;
+    margin-top: 2rem;
+  }
+
+  .body-card {
+    margin-left: 3%;
+  }
+
+  .img-container {
+    width: 70%;
+  }
+
+  .m-10 {
+    margin: 5rem;
+  }
+
+  .save-planet-text {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  .light-shine {
+    font-size: 50px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+  }
+
+  .help-title {
+    font-size: 15px;
+  }
+
+  .footer-line {
+    width: 90%;
+  }
+
+  .footer-links {
+    left: 5%;
+  }
+
+  .footer-socials {
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  .socials {
+    width: 4%;
+  }
+}
+
+@media only screen and (width: 540px){
+  .slider-image {
+    width: 100%;
+  }
+}
+
+@media only screen and (width: 653px){
+  .slider-image {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 666px){
+  .essentials-container {
+    display: grid!important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0!important;
+  }
+
+  .button {
+    padding: 10px 25px;
+    font-size: 10px;
+  }
+
+  .candle-name {
+    font-size: 17px;
+    font-weight: 800;
+  }
+
+  .scent-size {
+    font-size: 12px;
+  }
+
+  .card-body {
+    padding: 10% 0;
   }
 }

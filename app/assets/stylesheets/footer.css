@@ -7,11 +7,17 @@
   padding: 50px 50px;
   height: 30%;
   width: 100%;
-  border-top-right-radius: 50px;
-  border-top-left-radius: 50px;
+  /* border-top-right-radius: 50px;
+  border-top-left-radius: 50px; */
   background-color: #000;
-  color: white;
+  color: #E6FE53;
   z-index: 1;
+  line-height: 2;
+}
+
+.footer-logo {
+  width: 20%;
+  margin: 2rem;
 }
 
 .footer-carts {
@@ -23,10 +29,10 @@
   padding: 50px 50px;
   height: 30%;
   width: 100%;
-  border-top-right-radius: 50px;
-  border-top-left-radius: 50px;
+  /* border-top-right-radius: 50px;
+  border-top-left-radius: 50px; */
   background-color: #000;
-  color: rgb(255, 255, 255);
+  color: #E6FE53;
   z-index: 1;
 }
 
@@ -34,10 +40,12 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  position: absolute;
+  left: 3%;
 }
 
 .footer-links a {
-  color: rgb(255, 255, 255);
+  color: #E6FE53;
   opacity: 0.7;
   text-decoration: none;
   font-size: 18px;
@@ -48,10 +56,24 @@
   opacity: 1;
 }
 
+.footer-socials {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  position: absolute;
+  width: 100%;
+  padding: 50px;
+}
+
+.socials {
+  width: 3%;
+  margin:5px;
+}
+
 .footer-line {
   /* display: flex; */
   /* align-content: flex-end; */
-  border-top: 1px solid #000;
+  border-top: 1px solid #E6FE53;;
   position: absolute;
   width:94%;
 }
@@ -78,6 +100,38 @@
   /* text-align: center; */
 }
 
+.help-title {
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 665px) {
+  .footer-socials {
+    flex-direction: column!important;
+    align-items: flex-end!important;
+  }
+
+  .footer-links {
+    left: 5%!important;
+  }
+
+  .footer-links a{
+    font-size: 8px!important;
+  }
+
+  .form-group {
+    font-size: 8px!important;
+  }
+
+  .help-title {
+    font-size: 8px!important;
+  }
+
+  .footer-text {
+    font-size: 6px!important;
+    margin-top: 0rem!important;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .footer {
     padding: 25px 20px;
@@ -85,20 +139,32 @@
     border-top-left-radius: 0px;
   }
 
-  .footer-links {
-    display: none;
+  .footer-margin {
+    margin-bottom: 1rem;
+  }
+
+  .footer-links a{
+    font-size: 10px;
   }
 
   .form-group {
-    display: none;
+    font-size: 10px;
   }
 
-  .footer-line {
-    display: none!important;
+  .help-title {
+    font-size: 10px;
   }
 
   .footer-text {
-    font-size: 11px;
+    font-size: 8px;
     margin-top: 0rem!important;
+  }
+
+  .socials {
+    width: 6%;
+  }
+
+  .footer-socials {
+    padding: 0!important;
   }
 }

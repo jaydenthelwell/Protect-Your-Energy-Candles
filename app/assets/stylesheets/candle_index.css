@@ -4,20 +4,11 @@
   padding-top: 50px;
 }
 
-.edition-title {
-  text-align: center;
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 300;
-}
-
-p {
-  font-family: 'Work Sans', sans-serif;
-}
-
 .card-title {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Nixie One", system-ui;
   letter-spacing:3px;
 }
+
 .quick-shop {
   border: 1px solid black;
   padding: 15px;

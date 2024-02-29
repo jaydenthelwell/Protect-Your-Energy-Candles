@@ -1,12 +1,4 @@
-.add-to-bag {
-  background-color: black;
-  padding: 30px 132px;
-  width: 100%;
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  text-align: center;
-  border: 0;
-}
+
 
 .candle-show {
   flex-flow: column wrap;
@@ -34,13 +26,18 @@ a {
   margin: 20px!important;
 }
 
+
 .slick-next:before {
   content: "\27A4"!important;
   font-size: 40px!important;
+  color: black!important;
+  opacity: 1!important;
 }
 
 .slick-prev:before {
   content: '\27A4'!important;
   transform: rotateY('180deg')!important;
   font-size: 40px!important;
+  color: black!important;
+  opacity: 1!important;
 }

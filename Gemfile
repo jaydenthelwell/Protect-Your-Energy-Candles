@@ -6,6 +6,8 @@ gem 'monetize'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8"
 
+gem 'bootstrap', '~> 5.3.0'
+
 gem 'bootstrap-rubygem'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -22,6 +24,7 @@ gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
+
 
 gem 'sass-rails', '~> 6.0'
 
