@@ -4,15 +4,15 @@
   top: 0;
   z-index: 100;
   padding: 40px;
-  background-color: #ffffff;
+  background-color: rgb(255, 255, 255);
   width: 100%;
   padding-bottom: 0;
-  position: sticky;
+  position: fixed;
 }
-/*
+
 .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
-  justify-content: center!important;
-} */
+  display: block;
+}
 
 .item-count{
   background-color: #e75f5f;
@@ -50,18 +50,44 @@
   width:30%;
 }
 
+.position-profile-basket {
+  position: relative;
+  bottom: 2.7rem;
+}
+
 .nav-options {
   display: none;
 }
 
+.gap {
+  gap: 3rem;
+}
+
 @media only screen and (max-width: 1000px) {
+  .position-profile-basket {
+    bottom: 0rem;
+  }
+
+  .nav-container {
+    gap: 0px;
+  }
+
+  .gap {
+    gap: 0rem;
+  }
+
+  .navbar-options-text {
+    font-size: 15px;
+    transition: 2s;
+  }
+
   .navbar {
     position: sticky;
-    padding: 65px 0px 35px 0px;
+    padding: 35px 0px 35px 0px;
   }
 
   .options {
-    display: none;
+    display: none!important;
   }
 
   .navbar>.container-fluid {
@@ -126,7 +152,7 @@
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #D4A4A5;
+  color: #ffffff;
   display: block;
   transition: 0.3s;
 }
@@ -137,9 +163,9 @@
 }
 
 .sidebar .closebtn {
-  color: #818181;
+  color: #ffffff;
   position: absolute;
-  top: 30px;
+  top: 3%;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;

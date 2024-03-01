@@ -69,13 +69,14 @@
       });
     });
   </script>
-    <div class="d-flex justify-content-between align-items-center alerts" style="z-index: 200; margin: 0; padding: 10px; text-align: center; font-size: 17px;">
-      <p class="light-alert flex-grow-1 mb-0">Create a scented sanctuary, <%= link_to("Shop Luminous", light_editions_path, style: "color: rgb(217 217 217);") %></p>
-      <p class="dark-alert d-none flex-grow-1 mb-0">Discover enchanted mysterys, <%= link_to("Shop Nocturna", dark_editions_path, style: "color: rgb(217 217 217);") %></p>
-      <p class="vegan-friendly-alert d-none flex-grow-1 mb-0" style= "color: rgb(217 217 217);">Hand Poured & Vegan Friendly</p>
-      <i class="flex-items fa-solid fa-xmark" style="z-index: 2;"></i>
-    </div>
+    <%# <div class="d-flex justify-content-between align-items-center alerts" style="z-index: 200; margin: 0; padding: 10px; text-align: center; font-size: 17px;"> %>
+      <%# <p class="light-alert flex-grow-1 mb-0">Create a scented sanctuary, <%= link_to("Shop Luminous", light_editions_path, style: "color: rgb(217 217 217);") %>
+      <%# <p class="dark-alert d-none flex-grow-1 mb-0">Discover enchanted mysterys, <%= link_to("Shop Nocturna", dark_editions_path, style: "color: rgb(217 217 217);") %>
+      <%# <p class="vegan-friendly-alert d-none flex-grow-1 mb-0" style= "color: rgb(217 217 217);">Hand Poured & Vegan Friendly</p> %>
+      <%# <i class="flex-items fa-solid fa-xmark" style="z-index: 2;"></i> %>
+    <%# </div> %>
     <%= render 'shared/navbar' %>
+
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>">
         <%= value %>
