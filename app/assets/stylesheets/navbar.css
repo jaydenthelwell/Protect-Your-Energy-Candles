@@ -4,10 +4,14 @@
   top: 0;
   z-index: 100;
   padding: 40px;
-  background-color: #FFF6EA;
+  background-color: #ffffff;
   width: 100%;
   padding-bottom: 0;
   position: sticky;
+}
+
+.navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+  justify-content: center!important;
 }
 
 .item-count{
@@ -17,20 +21,11 @@
 }
 
 .navbar-text {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Nixie One", system-ui;
+  letter-spacing:3px;
   color: black;
   font-weight: 600;
   letter-spacing: 2px;
-}
-
-.home-btn {
-  color: #bc797a;
-  font-size: 17px;
-  transition: 2s;
-}
-
-.home-btn:hover {
-  color: #000000;
 }
 
 .navbar-collapse {
@@ -41,8 +36,10 @@
   gap: 90px;
 }
 
+
+
 .navbar-options-text {
-  font-size: 17px;
+  font-size: 25px;
   transition: 2s;
 }
 

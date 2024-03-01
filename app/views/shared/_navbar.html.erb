@@ -1,24 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid" >
-    <div class="pye-logo">
-      <%= link_to root_path do %>
-        <%= image_tag("protect_your_energy_logo.png", class: "navbar-text navbar-brand") %>
-      <% end %>
-    </div>
     <div class="nav-container d-flex justify-content-between">
       <div class="options">
-        <%= link_to("home", root_path, class: "btn home-btn navbar-text") %>
-        <%= link_to("shop all", candles_path, class: "btn navbar-options-text navbar-text") %>
-        <%= link_to("luminous", light_editions_path, class: "btn navbar-options-text navbar-text") %>
-        <%= link_to("nocturna", dark_editions_path, class: "btn navbar-options-text navbar-text") %>
+        <%= link_to("shop", candles_path, class: "btn navbar-options-text navbar-text") %>
+        <%= link_to("home", root_path, class: "btn navbar-options-text navbar-text") %>
+        <%= link_to("journal", light_editions_path, class: "btn navbar-options-text navbar-text") %>
+        <%= link_to("about", dark_editions_path, class: "btn navbar-options-text navbar-text") %>
       </div>
       <div class="nav-icons nav-options">
         <div id="mySidebar" class="sidebar">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <%= link_to("home", root_path, class: "btn home-btn navbar-text") %>
-          <%= link_to("shop all", candles_path, class: "btn navbar-options-text navbar-text") %>
-          <%= link_to("luminous", light_editions_path, class: "btn navbar-options-text navbar-text") %>
-          <%= link_to("nocturna", dark_editions_path, class: "btn navbar-options-text navbar-text") %>
+          <%= link_to("shop", candles_path, class: "btn navbar-options-text navbar-text") %>
+          <%= link_to("home", root_path, class: "btn navbar-options-text navbar-text") %>
+          <%= link_to("journal", light_editions_path, class: "btn navbar-options-text navbar-text") %>
+          <%= link_to("about", dark_editions_path, class: "btn navbar-options-text navbar-text") %>
         </div>
         <div id="main">
           <button class="openbtn" onclick="openNav()">&#9776;</button>
