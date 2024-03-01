@@ -7,7 +7,7 @@ class CreateCandles < ActiveRecord::Migration[7.0]
       t.text :description
       t.integer :stock
       t.decimal :price
-      t.references :edition, null: false, foreign_key: true
+      t.references :edition
 
       t.timestamps
     end
