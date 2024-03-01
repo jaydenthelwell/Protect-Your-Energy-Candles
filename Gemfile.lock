@@ -163,6 +163,7 @@ GEM
     nokogiri (1.16.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.5.5)
     popper_js (2.11.8)
     psych (5.1.2)
       stringio
@@ -289,6 +290,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   monetize
+  pg
   puma (~> 5.0)
   rails (~> 7.0.8)
   redis (~> 4.0)
