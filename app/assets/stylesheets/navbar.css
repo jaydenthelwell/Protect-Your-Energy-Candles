@@ -9,10 +9,10 @@
   padding-bottom: 0;
   position: sticky;
 }
-
+/*
 .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
   justify-content: center!important;
-}
+} */
 
 .item-count{
   background-color: #e75f5f;
@@ -24,7 +24,7 @@
   font-family: "Nixie One", system-ui;
   letter-spacing:3px;
   color: black;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 2px;
 }
 
@@ -35,7 +35,6 @@
 .nav-container {
   gap: 90px;
 }
-
 
 
 .navbar-options-text {
@@ -49,11 +48,6 @@
 
 .navbar-brand {
   width:30%;
-}
-
-.pye-logo {
-  display: flex;
-  justify-content: flex-start;
 }
 
 .nav-options {
