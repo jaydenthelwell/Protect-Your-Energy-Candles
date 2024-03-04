@@ -4,10 +4,19 @@
   top: 0;
   z-index: 100;
   padding: 40px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0);
   width: 100%;
   padding-bottom: 0;
   position: fixed;
+}
+
+.btn-secondary {
+  --bs-btn-bg: #6c757d00!important;
+  --bs-btn-border-color: #6c757d00!important;
+}
+
+.dropdown {
+  position: relative;
 }
 
 .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
@@ -20,13 +29,37 @@
   right: 20px;
 }
 
+.navbar-fixed-top.scrolled {
+  background-color: #fff !important;
+  color: black;
+  transition: background-color 100ms linear;
+}
+
+.navbar-fixed-color.scrolled {
+  color: black;
+  transition: background-color 100ms linear;
+}
+
+.navbar-fixed-icon.scrolled {
+  color: black;
+  transition: background-color 100ms linear;
+}
+
 .navbar-text {
   font-family: "Nixie One", system-ui;
   letter-spacing:3px;
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: 800;
   letter-spacing: 2px;
 }
+
+.navbar-icon {
+  color:white;
+}
+
+/* .navbar-text:hover {
+  text-decoration: wavy!important;
+} */
 
 .navbar-collapse {
   max-width: 50px;
@@ -36,15 +69,14 @@
   gap: 90px;
 }
 
-
 .navbar-options-text {
   font-size: 25px;
   transition: 2s;
 }
 
-.navbar-options-text:hover {
+/* .navbar-options-text:hover {
   text-decoration: underline;
-}
+} */
 
 .navbar-brand {
   width:30%;
@@ -82,7 +114,7 @@
   }
 
   .navbar {
-    position: sticky;
+    /* position: sticky; */
     padding: 35px 0px 35px 0px;
   }
 
@@ -175,7 +207,7 @@
   font-size: 30px;
   cursor: pointer;
   background-color: transparent;
-  color: black;
+  color: white;
   border: none;
 }
 
