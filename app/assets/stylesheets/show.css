@@ -2,9 +2,9 @@
 
 .candle-show {
   flex-flow: column wrap;
-  gap: 100px;
-  max-width: 30%;
-  padding-right: 150px;
+  gap: 30px;
+  max-width: 40%;
+
 }
 
 .badge {
@@ -14,8 +14,26 @@
   position: absolute;
 }
 
+.description {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: 3px;
+  line-height: 25px;
+  padding-right: 3rem;
+}
+
 .candle-image {
   width: 100%;
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+.price {
+  font-family: "Nixie One", system-ui;
+  font-size: 40px;
+  color: #000;
 }
 
 a {
@@ -40,4 +58,10 @@ a {
   font-size: 40px!important;
   color: black!important;
   opacity: 1!important;
+}
+
+.show-carousel-candles {
+  font-family: "Nixie one";
+  margin-top: 8rem;
+  font-size: 50px;
 }

@@ -1,49 +1,38 @@
 <div>
-  <div class="d-flex justify-content-between"style="gap: 30px; flex-direction: column; text-align: center;">
-    <h1 class="edition-title">Scented Candles</h1>
-    <p>Immerse yourself in the luxury of our handcrafted candles, meticulously designed for serenity and energy protection,<br> to elevate your senses and bring an enchanting ambiance to your space.</p>
+  <div class="main-landing-image">
+    <%= image_tag("cloud_background.png", alt: "Candles", class:"w-100 main-image") %>
+    <div class="container description-container">
+      <div class="card description-card">
+        <div class="card-body description-card-body">
+          <h1 class="shop-collection">SHOP OUR COLLECTION</h1>
+        </div>
+      </div>
+    </div>
   </div>
-  <div>
-    <%= image_tag("index_candles.jpeg", alt: "Candles", class:"w-100 main-image") %>
-  </div>
-  <div class="container container-candles">
-  <div>
-    <h1 style="font-family: 'Work Sans', sans-serif;">luminous</h1>
-    <br>
-    <p style="font-family: Bitter, serif;">a curated collection, designed to infuse tranquility, uplifting moments, and relaxation. Immerse yourself in scents that evoke freshness and clarity, creating a serene sanctuary for winding down and embracing moments of calmness.</p>
-    <br>
-  </div>
-    <div class="row gx-5">
-      <% @candles.each do |candle| %>
-        <div class="col-md-6 col-lg-3 mb-4">
-          <%= link_to(candle) do %>
-            <div class="card text-center">
-              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <% candle.images.each do |image| %>
-                      <%= image_tag(image.url, class: "card-img-top carousel-item d-block", alt: "Candle Image") %>
-                    <% end %>
-                  </div>
+  <div class="candles-container">
+    <div class="d-flex align-items-center flex-column welcome-message text-center p-5">
+      <h1>Welcome to our shop</h1>
+      <p>Browse our unique and vibrant scents that are sure to spark joy into your day and space.</p>
+      <br>
+    </div>
+    <div class="container">
+      <div class="row">
+        <% @candles.each_slice(4) do |candles_row| %>
+          <% candles_row.each do |candle| %>
+            <div class="col-md-3">
+              <%= link_to(candle) do %>
+                <div class="card d-flex align-items-center text-center gap-1 pb-5">
+                  <% first_image = candle.images.first %>
+                  <%= image_tag(first_image.url, class: "collection-image", alt: "Candle Image") if first_image %>
+                  <h3 class="card-title"><%= candle.name %></h3>
+                  <p class="font"><%= candle.scent %> <%= candle.size %></p>
+                  <strong class="font"><%= number_to_currency(candle.price, unit: '£') %></strong>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </a>
-              </div>
-              <div class="card-body">
-                <h3 class="card-title"><%= candle.name %></h3>
-                <p><%= candle.scent %></p>
-                <strong><%= number_to_currency(candle.price, unit: '£') %></strong><br><br>
-                <p><%= candle.size %></p>
-                <%# <a href="#" class="btn quick-shop">Preview</a> %>
-              </div>
+              <% end %>
             </div>
           <% end %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   <div class="container container-candles">
 </div>

@@ -1,7 +1,10 @@
 .main-image {
-  height: 60% !important;
-  padding-bottom: 100px;
-  padding-top: 50px;
+  height: 40rem !important;
+  background-color: white;
+}
+
+.candle-show-page {
+  padding-top: 7rem;
 }
 
 .card-title {
@@ -15,7 +18,26 @@
   border-radius: 0;
 }
 
-.row {
-  justify-content: center;
-  gap: 70px;
+.shop-collection {
+  font-family: "Nixie One", system-ui;
+  font-size: 65px;
+  color: black;
+}
+
+.candles-container {
+  background-color: white;
+}
+
+.collection-image {
+  width: 90%;
+  border: solid 2px black;
+  border-radius: 30px;
+}
+
+.container {
+  max-width: 1500px;
+}
+
+.welcome-message {
+  font-family: 'Nixie One';
 }

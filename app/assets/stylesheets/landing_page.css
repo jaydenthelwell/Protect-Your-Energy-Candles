@@ -313,9 +313,14 @@ body {
 
 #productSlider {
   margin: 0px 5% 0 5%;
-  background-color: white;
   padding-bottom: 5%;
 }
+
+/* #productslider {
+  margin: none;
+  background-color: none;
+  padding-bottom: none;
+} */
 
 .handwriting {
   font-family: "Dancing Script", cursive;
@@ -378,10 +383,6 @@ body {
 .candle-body{
   color: black;
   font-family: "Nixie One", system-ui;
-}
-
-.row {
-  gap: 600px!important;
 }
 
 .carousel-item {

@@ -1,0 +1,17 @@
+body.candles.show {
+  .navbar-text {
+    color: black;
+  }
+
+  .navbar {
+    border-bottom: 1px solid black;
+  }
+
+  .navbar-icon {
+    color: black;
+  }
+
+  .dropdown-toggle::after {
+    color: black;
+  }
+}

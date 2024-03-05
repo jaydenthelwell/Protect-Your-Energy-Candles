@@ -78,10 +78,14 @@
         var $nav = $(".navbar-fixed-top");
         var $color = $(".navbar-fixed-color");
         var $icon = $(".navbar-fixed-icon");
+        var $dropdown = $(".dropdown-toggle");
+        var $navbar = $(".navbar");
 
         $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
         $color.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
         $icon.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        $dropdown.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        $navbar.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
       });
     });
   </script>

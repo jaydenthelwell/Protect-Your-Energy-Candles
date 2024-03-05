@@ -3,16 +3,30 @@
   right: 0;
   top: 0;
   z-index: 100;
-  padding: 40px;
+  padding: 25px;
   background-color: rgba(255, 255, 255, 0);
   width: 100%;
   padding-bottom: 0;
   position: fixed;
+  border-bottom: 1px solid white;
+}
+
+.navbar-text {
+  padding-top: 0rem!important;
+  padding-bottom: 0rem!important;
+}
+
+.btn {
+  --bs-btn-padding-x: 0rem!important;
+  --bs-btn-padding-y: 0rem!important;
 }
 
 .btn-secondary {
+  margin-right: 1rem;
   --bs-btn-bg: #6c757d00!important;
   --bs-btn-border-color: #6c757d00!important;
+  --bs-btn-hover-bg: none!important;
+  --bs-btn-hover-border-color: none!important;
 }
 
 .dropdown {
@@ -23,16 +37,20 @@
   display: block;
 }
 
-.item-count{
+/* .item-count{
   background-color: #e75f5f;
   top: 60px;
   right: 20px;
-}
+} */
 
 .navbar-fixed-top.scrolled {
   background-color: #fff !important;
   color: black;
   transition: background-color 100ms linear;
+}
+
+.navbar.scrolled {
+  border-bottom: 1px solid black;
 }
 
 .navbar-fixed-color.scrolled {
@@ -45,9 +63,12 @@
   transition: background-color 100ms linear;
 }
 
+.dropdown-toggle.scrolled {
+  color: black;
+}
+
 .navbar-text {
   font-family: "Nixie One", system-ui;
-  letter-spacing:3px;
   color: rgb(255, 255, 255);
   font-weight: 800;
   letter-spacing: 2px;
@@ -67,6 +88,8 @@
 
 .nav-container {
   gap: 90px;
+  position: relative;
+  z-index: 200;
 }
 
 .navbar-options-text {
@@ -84,7 +107,7 @@
 
 .position-profile-basket {
   position: relative;
-  bottom: 2.7rem;
+  bottom: 1.9rem;
 }
 
 .nav-options {
@@ -153,10 +176,10 @@
     display: flex;
     justify-content: flex-end;
   }
-  .item-count {
+  /* .item-count {
     top: 60px;
     right: 0;
-  }
+  } */
 }
 
 .navbar-toggler {
