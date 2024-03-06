@@ -10,6 +10,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <%# <script src="Vibrant.min.js"></script>
+  <script src="Vibrant.js"></script> %>
   <%= javascript_importmap_tags %>
   <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" %>
   <%= csrf_meta_tags %>
@@ -45,8 +47,8 @@
         infinite: true,
         slidesToShow: 5,
         slidesToScroll: 1,
-        prevArrow: '<button type="button" class="slick-prev">Previous</button>',
-        nextArrow: '<button type="button" class="slick-next">Next</button>',
+        prevArrow: '<button type="button" class="slick-prev"></button>',
+        nextArrow: '<button type="button" class="slick-next"></button>',
         responsive: [
           {
             breakpoint: 768,
@@ -80,12 +82,16 @@
         var $icon = $(".navbar-fixed-icon");
         var $dropdown = $(".dropdown-toggle");
         var $navbar = $(".navbar");
+        var $menu = $(".openbtn");
+        var $badge = $(".badge");
 
         $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
         $color.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
         $icon.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
         $dropdown.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
         $navbar.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        $menu.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        $badge.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
       });
     });
   </script>
@@ -104,5 +110,6 @@
     <% end %>
     <script src="https://kit.fontawesome.com/3a09fea70a.js" crossorigin="anonymous"></script>
     <%= yield %>
+    <%= render 'shared/footer'%>
   </body>
 </html>

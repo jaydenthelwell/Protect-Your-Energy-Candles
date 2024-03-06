@@ -18,10 +18,12 @@
   border-radius: 0;
 }
 
-.shop-collection {
-  font-family: "Nixie One", system-ui;
-  font-size: 65px;
-  color: black;
+@media only screen and (max-width: 666px){
+.all-candles {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 !important;
+  }
 }
 
 .candles-container {

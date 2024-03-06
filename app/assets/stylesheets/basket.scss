@@ -1,0 +1,46 @@
+body.carts.show {
+  background-image: linear-gradient(to bottom right, #F1CCE5, #FFFFFF, #94D5FF);
+
+  .navbar-text {
+    color: black;
+  }
+
+  .navbar {
+    border-bottom: 1px solid black;
+  }
+
+  .navbar-icon {
+    color: black;
+  }
+
+  .dropdown-toggle::after {
+    color: black;
+  }
+  .openbtn {
+    color: black;
+  }
+
+  .badge {
+    color: black;
+  }
+
+  .cart-container {
+    padding: 10rem 3rem;
+  }
+
+  .footer-links {
+    display: none;
+  }
+
+  .footer-socials {
+    display: none;
+  }
+
+  .footer-logo {
+    display: none;
+  }
+
+  .footer-line {
+    margin-bottom: 12px;
+  }
+}

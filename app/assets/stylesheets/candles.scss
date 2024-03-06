@@ -1,22 +1,29 @@
+body.candles.index {
+  @media only screen and (min-width: 400px) and (max-width: 500px){
+    .light-shine {
+      font-size: 40px !important;
+    }
+  }
+}
+
 body.candles.show {
-  .slick-prev, .slick-next {
-    font-size: 18px;
-    color: #000;
-  }
+  @media only screen and (max-width: 1000px){
+    .light-shine {
+      font-size: 40px !important;
+      padding-bottom: 2rem;
+    }
 
-  .slick-prev {
-    top: 200px!important;
-  }
+    .button {
+      padding: 20px 45px;
+      font-size: 18px;
+    }
 
-  .slick-next {
-    top: 200px!important;
-  }
+    .media-flex-wrap {
+      padding-bottom: 3rem;
+    }
 
-  .slick-next:before {
-    color: black !important;
-  }
-
-  .slick-prev:before {
-    color: black!important;
+    .navbar-text {
+      color: white!important;
+    }
   }
 }

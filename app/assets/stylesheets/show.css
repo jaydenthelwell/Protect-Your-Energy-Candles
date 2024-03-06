@@ -1,10 +1,7 @@
-
-
 .candle-show {
   flex-flow: column wrap;
   gap: 30px;
   max-width: 40%;
-
 }
 
 .badge {
@@ -64,4 +61,21 @@ a {
   font-family: "Nixie one";
   margin-top: 8rem;
   font-size: 50px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .media-flex-wrap {
+    flex-wrap: wrap;
+  }
+  .candle-image {
+    padding: 2rem;
+    min-height: 60vh;
+  }
+  .candle-show {
+    max-width: 100%;
+    padding-left: 2rem;
+  }
+  .price {
+    font-size: 25px;
+  }
 }

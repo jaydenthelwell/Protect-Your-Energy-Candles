@@ -2,7 +2,7 @@
   <div>
     <span class="basket-heading">Shopping Basket</span>
     <span class="basket-quantity">[<%= "#{ @cart.line_items.sum(&:quantity) } #{'item'.pluralize(@cart.line_items.sum(&:quantity))}" %>]</span>
-    <p>The items in your basket are not reserved.</p>
+    <p class="summary-totals">The items in your basket are not reserved.</p>
   </div>
     <br>
   <div class="basket-container d-flex justify-content-between">
@@ -12,7 +12,7 @@
           <%= image_tag(item.candle.images.first.url, class: "card-img-left cart-image d-block", alt: "Candle Image") %>
           <div class="card-body ">
             <h2 class="card-title" style="font-weight: 700;"><%= item.candle.name %></h2>
-            <p class="card-text summary-totals" style="width: 300%;"><%= item.candle.scent %> <%= item.candle.size %></p>
+            <p class="card-text summary-totals"><%= item.candle.scent %> <%= item.candle.size %></p>
             <p class="card-text" style="font-weight: 700;"><%= number_to_currency(item.candle.price * item.quantity, unit: '£') %></p>
             <%= form_for(item, url: line_item_path(item), method: :patch, html: { class: 'quantity-form' }) do |form| %>
               <div>
@@ -81,4 +81,3 @@
     </div>
   <% end %>
 </div>
-<%= render 'shared/footer'%>

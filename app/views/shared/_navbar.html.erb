@@ -11,10 +11,10 @@
         <div class="nav-icons nav-options">
           <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <%= link_to("shop", candles_path, class: "btn navbar-fixed-color navbar-options-text navbar-text") %>
-            <%= link_to("home", root_path, class: "btn navbar-fixed-color navbar-options-text navbar-text") %>
-            <%= link_to("journal", light_editions_path, class: "btn navbar-fixed-color navbar-fixed-color navbar-options-text navbar-text") %>
-            <%= link_to("about", dark_editions_path, class: "btn navbar-fixed-color navbar-options-text navbar-text") %>
+            <%= link_to("shop", candles_path, class: "btn navbar-options-text navbar-text") %>
+            <%= link_to("home", root_path, class: "btn navbar-options-text navbar-text") %>
+            <%= link_to("journal", light_editions_path, class: "btn navbar-options-text navbar-text") %>
+            <%= link_to("about", dark_editions_path, class: "btn navbar-options-text navbar-text") %>
           </div>
           <div id="main">
             <button class="openbtn" onclick="openNav()">&#9776;</button>
@@ -40,7 +40,7 @@
     <div class="flex-grow-1 d-flex justify-content-end align-items-baseline position-profile-basket">
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa-regular fa-user navbar-icon navbar-fixed-color"></i>
+          <i class="fa-regular fa-user navbar-icon navbar-fixed-icon"></i>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <% if user_signed_in? %>

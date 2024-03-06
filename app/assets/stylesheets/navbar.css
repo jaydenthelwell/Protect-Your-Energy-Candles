@@ -67,6 +67,14 @@
   color: black;
 }
 
+.openbtn.scrolled {
+  color: black;
+}
+
+.badge.scrolled {
+  color: black;
+}
+
 .navbar-text {
   font-family: "Nixie One", system-ui;
   color: rgb(255, 255, 255);
@@ -154,10 +162,6 @@
   .nav-icons {
     display: flex;
     justify-content: flex-start;
-  }
-
-  .nav-options {
-    display: visible;
   }
 
   .pye-logo {

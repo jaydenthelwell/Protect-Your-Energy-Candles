@@ -8,14 +8,14 @@
 }
 
 .basket-heading {
-  font-family: "Work Sans", serif;
+  font-family: "Nixie One", system-ui;
   font-size: 35px;
   margin-right: 8px;
 }
 
 .basket-quantity {
   font-size: 20px;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Nixie One", system-ui;
 }
 
 .remove-button {
@@ -45,7 +45,7 @@
   align-content: center;
 }
 
-.basket-container{
+.basket-container {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -81,6 +81,12 @@
 
 .summary-totals {
   font-size: 17px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  letter-spacing: 3px;
+  line-height: 40px;
+  width: 300%;
 }
 
 .continue-shopping {
@@ -102,4 +108,17 @@
   width: 100%;
   padding: 30px 0px;
 
+}
+
+@media only screen and (max-width: 1000px){
+  .basket-container {
+    flex-wrap: wrap;
+  }
+  .remove-button {
+    top: -26px;
+    left: 0;
+  }
+  .summary-totals {
+    width: 100%;
+  }
 }

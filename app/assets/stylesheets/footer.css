@@ -22,15 +22,10 @@
 
 .footer-carts {
   position: relative;
-  bottom: -200px;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 20px;
-  padding: 50px 50px;
-  height: 30%;
+  padding: 1rem 1rem;
   width: 100%;
-  /* border-top-right-radius: 50px;
-  border-top-left-radius: 50px; */
   background-color: #000;
   color: #E6FE53;
   z-index: 1;
@@ -74,8 +69,7 @@
   /* display: flex; */
   /* align-content: flex-end; */
   border-top: 1px solid #E6FE53;;
-  position: absolute;
-  width:94%;
+  width: 100%;
 }
 
 .email-label {
