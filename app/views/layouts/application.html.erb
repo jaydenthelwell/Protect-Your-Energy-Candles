@@ -110,6 +110,6 @@
       </div>
     <% end %>
     <%= yield %>
-    <%= render 'shared/footer' unless controller_name == "sessions" && action_name == "new"%>
+    <%= render 'shared/footer' unless controller_name == "sessions" && action_name == "new" || controller_name == "registrations" && action_name == "new"%>
   </body>
 </html>
