@@ -14,6 +14,10 @@
 .navbar-text {
   padding-top: 0rem!important;
   padding-bottom: 0rem!important;
+  font-family: "Nixie One", system-ui;
+  color: rgb(255, 255, 255);
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
 .btn {
@@ -75,13 +79,6 @@
   color: black;
 }
 
-.navbar-text {
-  font-family: "Nixie One", system-ui;
-  color: rgb(255, 255, 255);
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
 .navbar-icon {
   color:white;
 }
@@ -101,13 +98,13 @@
 }
 
 .navbar-options-text {
-  font-size: 25px;
+  font-size: 18px;
   transition: 2s;
 }
 
-/* .navbar-options-text:hover {
+.navbar-options-text:hover {
   text-decoration: underline;
-} */
+}
 
 .navbar-brand {
   width:30%;
