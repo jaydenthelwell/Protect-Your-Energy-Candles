@@ -1,0 +1,65 @@
+body.users.show {
+  background-color: #ffffff;
+
+  .navbar-text {
+    color: black;
+  }
+
+  .navbar {
+    background-color: #fff !important;
+    border-bottom: 1px solid black;
+  }
+
+  .navbar-icon {
+    color: black;
+  }
+
+  .dropdown-toggle::after {
+    color: black;
+  }
+  .openbtn {
+    color: black;
+  }
+
+  .badge {
+    color: black;
+  }
+
+}
+
+.profile-container {
+  margin: 10rem;
+}
+
+.black-line {
+  border-top: 1px solid black;;
+  width: 100%;
+}
+
+body.registrations.edit {
+  background-color: #ffffff;
+
+  .navbar-text {
+    color: black;
+  }
+
+  .navbar {
+    background-color: #fff !important;
+    border-bottom: 1px solid black;
+  }
+
+  .navbar-icon {
+    color: black;
+  }
+
+  .dropdown-toggle::after {
+    color: black;
+  }
+  .openbtn {
+    color: black;
+  }
+
+  .badge {
+    color: black;
+  }
+}

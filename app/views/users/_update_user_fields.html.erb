@@ -1,0 +1,32 @@
+<%= form_for [@user] do |f| %>
+  <div class="field">
+    <%= f.label :first_name, 'First Name' %><br />
+    <%= f.text_field :first_name, placeholder: 'Enter your first name' %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :second_name, 'Second Name' %><br />
+    <%= f.text_field :second_name, placeholder: 'Enter your second name' %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :email, 'Email' %><br />
+    <%= f.text_field :email, placeholder: 'Enter your email' %>
+  </div>
+  <br>
+  <h1>RESET PASSWORD</h1>
+  <div class="field">
+    <%= f.text_field :password, placeholder: '*Enter password' %>
+  </div> <br>
+  <div class="field">
+    <%= f.text_field :password, placeholder: '*Verify Password' %>
+  </div>
+  <h1>Birthday</h1>
+  <div class="field">
+    <div class="dob-fields">
+      <%= f.date_select :d_o_b, { order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' } }, class: 'dob-select' %>
+    </div>
+  </div>
+  <br>
+    <%= f.submit 'Update', class: 'btn btn-primary' %>
+<% end %>
