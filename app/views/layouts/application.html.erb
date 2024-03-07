@@ -103,13 +103,13 @@
     <%# </div> %>
     <%= render 'shared/navbar' %>
 
+    <script src="https://kit.fontawesome.com/3a09fea70a.js" crossorigin="anonymous"></script>
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>">
-        <%= value %>
+        <%= value %>✅
       </div>
     <% end %>
-    <script src="https://kit.fontawesome.com/3a09fea70a.js" crossorigin="anonymous"></script>
     <%= yield %>
-    <%= render 'shared/footer'%>
+    <%= render 'shared/footer' unless controller_name == "sessions" && action_name == "new"%>
   </body>
 </html>

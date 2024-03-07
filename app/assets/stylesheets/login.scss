@@ -1,0 +1,240 @@
+body.sessions.new {
+  background-color: #9FBFD4;
+
+
+  .text-box {
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 12px;
+  }
+
+  .navbar-text {
+    color: black;
+  }
+
+  .navbar {
+    background-color: #fff !important;
+    border-bottom: 1px solid black;
+  }
+
+  .navbar-icon {
+    color: black;
+  }
+
+  .dropdown-toggle::after {
+    color: black;
+  }
+  .openbtn {
+    color: black;
+  }
+
+  .badge {
+    color: black;
+  }
+
+  .new_user {
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+    width: 100%;
+  }
+}
+
+body.registrations.new {
+  background-color: #9FBFD4;
+
+
+  .text-box {
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 12px;
+  }
+
+  .navbar-text {
+    color: black;
+  }
+
+  .navbar {
+    background-color: #fff !important;
+    border-bottom: 1px solid black;
+  }
+
+  .navbar-icon {
+    color: black;
+  }
+
+  .dropdown-toggle::after {
+    color: black;
+  }
+  .openbtn {
+    color: black;
+  }
+
+  .badge {
+    color: black;
+  }
+
+  .new_user {
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+    width: 100%;
+  }
+}
+
+.login-button {
+  font-family: "Roboto";
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+  border: 1px solid;
+  border-radius: 7px;
+  padding: 15px 70px;
+  transition-duration: 0.4s;
+}
+
+.login-title {
+  font-family: "Roboto";
+}
+
+.login-card {
+  padding: 9rem;
+}
+
+.bottom {
+  bottom: -200px;
+}
+
+@media only screen and (max-width: 1025px) {
+  body.sessions.new {
+    overflow: scroll;
+  }
+
+  .login-session {
+    display: block!important;
+    background: url("blossom-flowers.png") no-repeat;
+    background-size: cover;
+  }
+
+  .login-photo {
+    display: none;
+  }
+
+  .login-card {
+    padding: 10rem 2rem 19.5rem 2rem!important;
+  }
+
+  body.sessions.new .new_user {
+    width: auto;
+  }
+}
+
+@media (orientation: landscape) and (min-aspect-ratio: 16/9) and (max-width: 1024px) {
+  body.sessions.new {
+    overflow: visible;
+  }
+
+  .badge {
+    right: -2%;
+  }
+}
+
+@media only screen and (width: 768px ) {
+  .login-session {
+    height: 100vh;
+  }
+}
+
+@media only screen
+and (min-device-width : 820px)
+and (max-device-width : 1180px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 1)  {
+  .login-session {
+    height: 100vh;
+  }
+
+  .new_user {
+    width: 70%!important;
+  }
+}
+
+// @media only screen
+// and (min-device-width : 820px)
+// and (max-device-width : 1180px)
+// and (orientation : landscape)
+// and (-webkit-min-device-pixel-ratio: 1)  {
+//   .login-card {
+//     padding: 2rem;
+//     position: relative;
+//     left: 10%;
+//   }
+
+//   .login-photo {
+//     position: relative;
+//     left: 20%;
+//   }
+// }
+
+@media only screen
+and (min-device-width : 912px)
+and (max-device-width : 1368px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 1)  {
+  .login-card {
+    padding: 2rem;
+    position: relative;
+    left: 10%;
+  }
+
+  .login-photo {
+    position: relative;
+    left: 20%;
+  }
+
+  .login-photo img {
+    height: 100vh
+  }
+}
+
+//IPAD AIR + SURFACE PRO 7 + ZENBOOK
+
+@media only screen
+and (min-device-width : 912px)
+and (max-device-width : 1368px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 1)  {
+  .login-card {
+    padding: 2rem;
+    position: relative;
+    left: 10%;
+  }
+
+  .login-photo {
+    position: relative;
+    left: 20%;
+  }
+}
+
+//IPHONES LANDSCAPE
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 932px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 1)  {
+  .login-card {
+    position: initial;
+  }
+}
+
+//IPAD MINI
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 1)  {
+  .login-card {
+    position: initial;
+  }
+}

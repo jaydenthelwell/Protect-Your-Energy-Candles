@@ -1,4 +1,4 @@
-<div class="cart-container">
+<div class="cart-container <%= 'empty-cart' if @cart.line_items.empty? %>">
   <div>
     <span class="basket-heading">Shopping Basket</span>
     <span class="basket-quantity">[<%= "#{ @cart.line_items.sum(&:quantity) } #{'item'.pluralize(@cart.line_items.sum(&:quantity))}" %>]</span>
@@ -10,7 +10,7 @@
       <% @cart.line_items.each do |item| %>
         <div class="card first-card flex-row">
           <%= image_tag(item.candle.images.first.url, class: "card-img-left cart-image d-block", alt: "Candle Image") %>
-          <div class="card-body ">
+          <div class="card-body cart-body">
             <h2 class="card-title" style="font-weight: 700;"><%= item.candle.name %></h2>
             <p class="card-text summary-totals"><%= item.candle.scent %> <%= item.candle.size %></p>
             <p class="card-text" style="font-weight: 700;"><%= number_to_currency(item.candle.price * item.quantity, unit: '£') %></p>
@@ -24,11 +24,11 @@
                 </div>
               </div>
             <% end %>
+          </div>
             <%= button_to line_item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'remove-button' do %>
               <span class="visually-hidden">Remove</span>
-              <%= image_tag("close.png", class:"remove-item") %>
+              <i class="fa-solid fa-xmark"></i>
             <% end %>
-          </div>
         </div>
       <% end %>
     </div>

@@ -1,5 +1,5 @@
 .cart-image {
-  width: 60%;
+  width: 100%;
 }
 
 .cart-container{
@@ -21,7 +21,6 @@
 .remove-button {
   position: absolute;
   top: 20px;
-  right: -800px;
   background: none;
   border: none;
   padding: 0;
@@ -89,6 +88,10 @@
   width: 300%;
 }
 
+.cart-body {
+  min-width: 100%;
+}
+
 .continue-shopping {
   background-color: black;
   padding: 15px 30px;
@@ -121,4 +124,14 @@
   .summary-totals {
     width: 100%;
   }
+  .cart-image {
+    width: 50%;
+    height: 35%;
+  }
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+  display: flex!important;
+  justify-content: end!important;
 }

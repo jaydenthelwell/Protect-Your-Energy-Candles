@@ -17,3 +17,9 @@
 .dark-alert:not(.d-none) {
   opacity: 1;
 }
+
+.alert {
+  position: absolute;
+  top: 6rem;
+  right: 0;
+}

@@ -25,7 +25,11 @@ body.carts.show {
   }
 
   .cart-container {
-    padding: 10rem 3rem;
+    padding: 10rem 3rem 5rem 3rem;
+  }
+
+  .empty-cart {
+    padding: 10rem 3rem 25rem 3rem;
   }
 
   .footer-links {
@@ -42,5 +46,41 @@ body.carts.show {
 
   .footer-line {
     margin-bottom: 12px;
+  }
+
+  @media only screen and (max-width: 1000px){
+    .card-body {
+      padding: 0;
+    }
+
+    .card {
+      gap: 20px;
+    }
+
+    .basket-container {
+      gap: 200px;
+    }
+
+    .quantity-adjust {
+      width: 133px;
+    }
+
+    .remove-button {
+      top: 0%;
+      right: 0px;
+      left: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px){
+  .badge {
+    position: absolute;
+    top: -50%;
+    right: -5%;
+  }
+
+  .cart-body {
+    min-width: 70%!important;
   }
 }

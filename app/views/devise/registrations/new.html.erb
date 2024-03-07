@@ -1,46 +1,51 @@
-<div class="container">
-  <h2>Sign up</h2>
+<div class="login-session d-flex flex-row align-items-center justify-content-between">
+  <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center login-card">
+    <h2>Sign up</h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field">
-      <%= f.label :first_name %><br />
-      <%= f.text_field :first_name, autofocus: true, autocomplete: "first-name" %>
-    </div>
+      <div class="field">
+        <%= f.label :first_name %><br />
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "first-name", class: "text-box w-100 mt-2", placeholder: "e.g. John" %>
+      </div>
 
-    <div class="field">
-      <%= f.label :second_name %><br />
-      <%= f.text_field :second_name, autofocus: true, autocomplete: "family-name" %>
-    </div>
+      <div class="field">
+        <%= f.label :second_name %><br />
+        <%= f.text_field :second_name, autofocus: true, autocomplete: "family-name", class: "text-box w-100 mt-2", placeholder: "e.g. Smith" %>
+      </div>
 
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "text-box w-100 mt-2", placeholder: "Email"%>
+      </div>
 
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password", class: "text-box w-100 mt-2", placeholder: "Password" %>
+      </div>
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "text-box w-100 mt-2" %>
+      </div>
 
-    <div class="field">
-      <%= f.label :Date_Of_Birth %><br />
-      <%= f.date_field :d_o_b, autocomplete: "new-password" %>
-    </div>
+      <div class="field">
+        <%= f.label :Date_Of_Birth %><br />
+        <%= f.date_field :d_o_b, autocomplete: "new-password", class: "text-box w-100 mt-2", placeholder: "15/02/2002" %>
+      </div>
 
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
-  <% end %>
+      <div class="actions text-center">
+        <%= f.submit "Sign up", class: "login-button w-100"%>
+      </div>
+    <% end %>
 
-  <%= render "devise/shared/links" %>
+    <%= link_to "Log in", new_session_path(resource_name) %><br />
+  </div>
+  <div class="login-photo">
+    <%= image_tag("blossom-flowers.png") %>
+  </div>
 </div>
