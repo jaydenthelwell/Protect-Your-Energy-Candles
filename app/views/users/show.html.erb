@@ -1,52 +1,69 @@
-<div class="d-flex flex-column">
+<%= render 'shared/navbar' %>
+<div class="d-flex my-account-container">
+  <div id="sidebar">
+    <div id="nav-account">
+      <ul class="first_nav">
+          <li>My Account</li>
+          <li class="logout"><%= link_to "Log out", destroy_user_session_path%></li>
+      </ul>
+      <ul class="main_nav">
+        <li id="nav_account_profile"><%= link_to "ACCOUNT PROFILE", edit_user_registration_path(@user)%></li>
+        <li id="nav_address_book"><%= link_to "ADDRESS BOOK", user_addresses_path(@user)%></li>
+        <li id="nav_orders"><%= link_to "ORDERS", edit_user_registration_path(@user)%></li>
+      </ul>
+    </div>
+  </div>
   <div class="profile-container">
     <div>
       <%# <%= link_to "Back", :back %>
-      <%# <h1>My Account</h1> %>
-      <div class="d-flex flex-column justify-content-evenly gap-5">
-      <h2>Account Profile</h2>
-        <div class="black-line"></div>
-        <p>Please review your information below and add any missing information.</p>
-      </div>
-      <div class="d-flex justify-content-end">
-        <p style="color: black; opacity: 0.6;">* denotes required field</p>
-      </div>
-      <h5>PROFILE</h5>
-      <div>
-        <p><strong>Name:</strong> <%= @user.first_name %> <%= @user.second_name %></p>
-        <p><strong>Email:</strong> <%= @user.email %></p>
-        <p><strong>DOB:</strong> <%= @user.d_o_b %></p>
-      </div>
-      <%= link_to "Update details", edit_user_registration_path(@user), class: "btn" %>
-    </div>
-    <div>
-      <h2>Address Book</h2>
-      <% if @user.addresses.any? %>
-        <p><strong>DEFAULT DELIVERY ADDRESS</strong></p>
+      <h1>My Account</h1>
+      <div class="black-line"></div>
+      <div class="d-flex justify-content-evenly my-account">
+        <div class="profile">
+          <div class="d-flex flex-column justify-content-evenly gap-3">
+            <div class="d-flex justify-content-between align-items-center gap-5">
+              <h2>Account Profile</h2>
+              <%= link_to "Update details", edit_user_registration_path(@user), style:"font-size: 13px;", class:"view-all" %>
+            </div>
+            <div class="black-line"></div>
+          </div>
           <div>
-            <% default_address = @user.addresses.find_by(default: true) %>
-            <% if default_address %>
-              <div>
-                <%= default_address.first_name %> <%= default_address.last_name %> <br>
-                <%= default_address.street %><br>
-                <%= default_address.city %><br>
-                <%= default_address.county %><br>
-                <%= default_address.postcode %><br>
-                <%= default_address.phone_number %>
-              </div>
+            <p class="my-account-content"><strong>Name:</strong> <%= @user.first_name %> <%= @user.second_name %></p>
+            <p class="my-account-content"><strong>Email:</strong> <%= @user.email %></p>
+            <p class="my-account-content"><strong>DOB:</strong> <%= @user.d_o_b %></p>
+          </div>
+        </div>
+        <div class="address">
+          <div class="d-flex flex-column justify-content-evenly gap-3">
+            <div class="d-flex justify-content-between align-items-center gap-5">
+              <h2>Address Book</h2>
+              <%= link_to 'View All', user_addresses_path(@user), style:"font-size: 13px;", class:"view-all" %>
+            </div>
+            <div class="black-line"></div>
+          </div>
+          <div>
+            <% if @user.addresses.any? %>
+              <p><strong>DEFAULT DELIVERY ADDRESS</strong></p>
+                <div>
+                  <% default_address = @user.addresses.find_by(default: true) %>
+                  <% if default_address %>
+                    <div>
+                      <p class="my-account-content"><%= default_address.first_name %> <%= default_address.last_name %> <br></p>
+                      <p class="my-account-content"><%= default_address.street %><br></p>
+                      <p class="my-account-content"><%= default_address.city %><br></p>
+                      <p class="my-account-content"><%= default_address.county %><br></p>
+                      <p class="my-account-content"><%= default_address.postcode %><br></p>
+                      <p class="my-account-content"><%= default_address.phone_number %></p>
+                    </div>
+                  <% else %>
+                    <p class="my-account-content">No default delivery address set. <%= link_to "Click here", user_addresses_path(@user), style:"color: blueviolet;" %> to visit your address book.</p>
+                  <% end %>
+                </div>
             <% else %>
-              <p>No default delivery address set.</p>
+              <p class="my-account-content">No default delivery address set. <%= link_to "Click here", user_addresses_path(@user), style:"color: blueviolet;" %> to visit your address book.</p>
             <% end %>
           </div>
-      <% else %>
-        <p>No default delivery address set.</p>
-      <% end %>
-      <br><br>
-      <%= link_to 'View All Addresses', user_addresses_path(@user) %>
-      <div class="w3-sidebar w3-bar-block" style="width:25%">
-        <a href="#" class="w3-bar-item w3-button">Link 1</a>
-        <a href="#" class="w3-bar-item w3-button">Link 2</a>
-        <a href="#" class="w3-bar-item w3-button">Link 3</a>
+        </div>
       </div>
     </div>
   </div>

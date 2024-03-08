@@ -1,5 +1,14 @@
 <div class="d-flex flex-column">
   <div class="profile-container">
+    <div class="d-flex flex-column justify-content-evenly gap-5">
+      <h2>Account Profile</h2>
+      <div class="black-line"></div>
+      <p>Please review your information below and add any missing information.</p>
+    </div>
+    <div class="d-flex justify-content-end">
+      <p style="color: black; opacity: 0.6;">* denotes required field</p>
+    </div>
+    <h4>PROFILE</h4>
     <%= form_with(model: resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
