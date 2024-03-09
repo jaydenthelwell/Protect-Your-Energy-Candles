@@ -1,4 +1,8 @@
 class PaymentsController < ApplicationController
+  def index
+    @orders = Order.all
+  end
+
   def show
     @order = Order.find_by(
       session_id: session.id.to_s,

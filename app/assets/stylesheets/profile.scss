@@ -35,6 +35,7 @@ body.users.show {
 
   #sidebar .first_nav {
     margin: 1em 0 2em 0;
+    font-family: "Roboto", sans-serif;
   }
 
   #sidebar .first_nav li {
@@ -64,6 +65,7 @@ body.users.show {
     text-transform: uppercase;
     cursor: pointer;
     color: black;
+    font-family: "Roboto", sans-serif;
   }
 
   ul {
@@ -74,6 +76,20 @@ body.users.show {
   #sidebar .main_nav li::before{
     content: "\00BB";
     padding-right:3rem;
+  }
+
+  #sidebar {
+    min-width: 20%;
+  }
+
+  @media only screen and (max-width: 1000px){
+    #sidebar {
+      display: none;
+    }
+
+    .profile-container {
+      margin: 2rem;
+    }
   }
 }
 
@@ -97,6 +113,7 @@ a {
 
 .my-account-content {
   padding-top: 2rem;
+  font-family: "Roboto", sans-serif;
 }
 
 .black-line {

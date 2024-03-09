@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
   resources :candles, only: [:index, :show]
   resources :line_items
-  resources :payments, only: [:show]
+  resources :payments, only: [:show, :index]
   resources :checkouts, only: [:show]
 
   resources :carts do
