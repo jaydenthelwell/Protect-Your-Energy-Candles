@@ -16,13 +16,13 @@
   <div class="profile-container">
     <div>
       <%# <%= link_to "Back", :back %>
-      <h1 class="font">My Account</h1>
+      <h1 class="font my-account-title">My Account</h1>
       <div class="black-line"></div>
       <div class="d-flex justify-content-start my-account flex-wrap">
         <div class="profile">
           <div class="d-flex flex-column justify-content-evenly gap-3">
             <div class="d-flex justify-content-between align-items-center gap-5">
-              <h2 class="font">Account Profile</h2>
+              <h2 class="font account-headers">Account Profile</h2>
               <%= link_to "Update details", edit_user_registration_path(@user), style:"font-size: 13px;", class:"view-all" %>
             </div>
             <div class="black-line"></div>
@@ -36,7 +36,7 @@
         <div class="address">
           <div class="d-flex flex-column justify-content-evenly gap-3">
             <div class="d-flex justify-content-between align-items-center gap-5">
-              <h2 class="font">Address Book</h2>
+              <h2 class="font account-headers">Address Book</h2>
               <%= link_to 'View All', user_addresses_path(@user), style:"font-size: 13px;", class:"view-all" %>
             </div>
             <div class="black-line"></div>
@@ -67,7 +67,7 @@
         <div class="orders">
           <div class="d-flex flex-column justify-content-evenly gap-3">
             <div class="d-flex justify-content-between align-items-center gap-5">
-              <h2 class="font">Orders</h2>
+              <h2 class="font account-headers">Orders</h2>
               <%= link_to "All Orders", payments_path(@user), style:"font-size: 13px;", class:"view-all" %>
             </div>
             <div class="black-line"></div>
