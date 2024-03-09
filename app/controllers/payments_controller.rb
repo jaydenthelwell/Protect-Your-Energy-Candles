@@ -1,6 +1,8 @@
 class PaymentsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @orders = Order.all
+    @users_orders = current_user.orders
   end
 
   def show
@@ -23,5 +25,15 @@ class PaymentsController < ApplicationController
       line_item.order = @order
       line_item.save
     end
+  end
+
+  def create
+    @order = current_user.orders.build(order_params)
+  end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:session_id, :stripe_checkout_id, :status)
   end
 end

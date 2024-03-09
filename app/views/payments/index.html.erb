@@ -4,8 +4,31 @@
   </div>
   <div>
     <h5>ORDERS</h5>
-    <div>
-      <%= @orders.candle %>
-    </div>
+    <% if @users_orders.present? %>
+    <% @users_orders.each do |order| %>
+      <div class="order-details">
+        <h3>Order #<%= order.id %></h3>
+        <% order.line_items.each do |line_item| %>
+          <% candle = line_item.candle %>
+          <div class="d-flex candle-show">
+            <div>
+              <h1 class="light-shine"><%= candle.name %></h1>
+              <p class="price"><%= candle.scent %></p>
+              <p class="price"><%= number_to_currency(candle.price, unit: '£') %></p>
+            </div>
+            <div>
+              <p class="description"><%= candle.description %></p>
+              <p class="description">Hand poured on: <%= candle.date_made.strftime("%A, %d %B %Y") %></p>
+              <div class="d-flex flex-column justify-content-between">
+                <p class="description" style="padding-top: 1rem; text-decoration: underline;  text-underline-offset: 10px;"><%= candle.size %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <% else %>
+      <p>You have not placed any orders with us, <%= link_to("click here", candles_path) %> to visit our shop!</p>
+    <% end %>
   </div>
 </div>

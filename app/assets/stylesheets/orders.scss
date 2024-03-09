@@ -1,0 +1,30 @@
+.my-orders {
+  background-color: white;
+  padding:10rem;
+}
+
+body.payments.index {
+  .navbar-text {
+    color: black;
+  }
+
+  .navbar {
+    background-color: #fff !important;
+    border-bottom: 1px solid black;
+  }
+
+  .navbar-icon {
+    color: black;
+  }
+
+  .dropdown-toggle::after {
+    color: black;
+  }
+  .openbtn {
+    color: black;
+  }
+
+  .badge {
+    color: black;
+  }
+}
