@@ -9,3 +9,11 @@ Stripe.api_version = "2023-10-16"
 #   secret_key: ENV['STRIPE_SECRET_KEY']
 # }
 # Stripe.api_key = Rails.configuration.stripe[:secret_key]
+
+if Rails.env.production?
+  stripe_credentials = Rails.application.credentials.stripe_prod
+else
+  stripe_credentials = Rails.application.credentials.stripe_test
+end
+
+Stripe.api_key = stripe_credentials[:secret_key]
