@@ -1,6 +1,6 @@
 <h1>Checkout Page</h1>
 <script type="module" src="/javascript/controllers/stripe_controller.js"></script>
 <div data-controller="stripe"
-  data-stripe-public-key-value="<%= Rails.application.credentials.dig(:stripe, :publishable_key)%>"
+  data-stripe-public-key-value="<%= if Rails.env.development? then Rails.application.credentials.dig(:development, :stripe, :publishable_key) else Rails.application.credentials.dig(:production, :stripe, :publishable_key) end %>"
   data-stripe-client-secret-value="<%= @session.client_secret %>">
 </div>
