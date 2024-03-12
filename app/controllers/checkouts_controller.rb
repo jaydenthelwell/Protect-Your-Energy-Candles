@@ -16,6 +16,7 @@ class CheckoutsController < ApplicationController
       return_url: CGI.unescape(payment_url(session_id: '{CHECKOUT_SESSION_ID}'))
     )
     puts "Session created: #{@session.inspect}"
+    puts "Client Secret: #{@session.client_secret}"
     Order.create(session_id: session.id, stripe_checkout_id: @session.id)
   end
 
