@@ -1,5 +1,7 @@
 class CheckoutsController < ApplicationController
   def show
+    stripe_secret_key = Rails.application.credentials.dig(Rails.env.to_sym, :stripe, :secret_key)
+    puts "Stripe Secret Key: #{stripe_secret_key}"
     @session = Stripe::Checkout::Session.create(
       line_items: [{
         price_data: {
