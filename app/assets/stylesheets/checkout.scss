@@ -1,0 +1,28 @@
+body.checkouts.show {
+  .navbar-text {
+    color: black;
+  }
+
+  .navbar {
+    background-color: #fff !important;
+    border-bottom: 1px solid black;
+  }
+
+  .navbar-icon {
+    color: black;
+  }
+
+  .dropdown-toggle::after {
+    color: black;
+  }
+  .openbtn {
+    color: black;
+  }
+
+  .badge {
+    color: black;
+  }
+
+  background-color: white;
+  margin:7rem;
+}
