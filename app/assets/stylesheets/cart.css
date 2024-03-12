@@ -133,5 +133,5 @@
 .card-text:last-child {
   margin-bottom: 0;
   display: flex!important;
-  justify-content: end!important;
+  justify-content: flex-end!important;
 }
