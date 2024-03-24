@@ -2,7 +2,6 @@ import { Controller } from "@hotwired/stimulus";
 
 export class StripeController extends Controller {
   static values = { publicKey: String, clientSecret: String };
-  stripe = Stripe(this.publicKeyValue);
 
   async connect() {
     console.log("Stimulus controller connected");
@@ -10,16 +9,24 @@ export class StripeController extends Controller {
     console.log("Public Key:", this.publicKeyValue);
     console.log("Client Secret:", this.clientSecretValue);
 
-    this.checkout = await this.stripe.initEmbeddedCheckout({
-      clientSecret: this.clientSecretValue,
-    });
+    try {
+      const stripe = Stripe(this.publicKeyValue);
 
-    console.log("Checkout Object:", this.checkout);
+      this.checkout = await stripe.initEmbeddedCheckout({
+        clientSecret: this.clientSecretValue,
+      });
 
-    this.checkout.mount(this.element);
+      console.log("Checkout Object:", this.checkout);
+
+      this.checkout.mount(this.element);
+    } catch (error) {
+      console.error("Error initializing Stripe:", error);
+    }
   }
 
   disconnect() {
-    this.checkout.destroy();
+    if (this.checkout) {
+      this.checkout.destroy();
+    }
   }
 }
