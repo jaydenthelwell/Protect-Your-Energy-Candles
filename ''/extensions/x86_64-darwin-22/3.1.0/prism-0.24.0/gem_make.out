@@ -1,5 +1,5 @@
 current directory: /Users/jaydenthelwell/pye-candles/pye-candles/''/gems/prism-0.24.0/ext/prism
-/Users/jaydenthelwell/.rbenv/versions/3.1.2/bin/ruby -I /Users/jaydenthelwell/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20240309-5321-qo3rli.rb extconf.rb
+/Users/jaydenthelwell/.rbenv/versions/3.1.2/bin/ruby -I /Users/jaydenthelwell/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20240324-18362-s7pz82.rb extconf.rb
 checking for prism.h in /Users/jaydenthelwell/pye-candles/pye-candles/''/gems/prism-0.24.0/include... no
 *** extconf.rb failed ***
 Could not create Makefile due to some reason, probably lack of necessary

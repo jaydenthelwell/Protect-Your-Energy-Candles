@@ -4,6 +4,8 @@
   <title>Handmade Vegan Soy Candle Co.</title>
   <link rel="icon" href="<%= asset_path('favicon-logo.png') %>" type="image/png" sizes="16x16">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
@@ -12,17 +14,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <%# <script src="Vibrant.min.js"></script>
   <script src="Vibrant.js"></script> %>
-  <%= javascript_importmap_tags %>
   <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" %>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_include_tag 'https://js.stripe.com/v3/', 'data-turbo-track': 'reload' %>
   <%= javascript_include_tag 'reveal' %>
   <%= stylesheet_link_tag 'navbar' %>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-  <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
 
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
@@ -35,6 +33,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Nixie+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <%= javascript_importmap_tags %>
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
