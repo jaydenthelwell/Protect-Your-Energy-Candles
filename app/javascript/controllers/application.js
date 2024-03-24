@@ -1,5 +1,5 @@
 import { Application } from "@hotwired/stimulus";
-import { StripeController } from "/stripe_controller";
+import { StripeController } from "./stripe_controller";
 
 const application = Application.start();
 application.register("stripe", StripeController);
