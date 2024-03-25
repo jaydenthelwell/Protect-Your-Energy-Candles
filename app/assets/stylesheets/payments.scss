@@ -37,6 +37,10 @@ body.payments.show {
     color: black;
   }
 
+  .card-body {
+    padding: 0;
+  }
+
 }
 
 .payments-line-item-image {
@@ -47,7 +51,6 @@ body.payments.show {
   margin: 10rem 0;
 }
 
-/* Add this CSS to your external CSS file */
 .thankyou-image {
   width: 40%;
 }
@@ -78,4 +81,14 @@ body.payments.show {
   font-size: 20px;
   font-family: 'Martel Sans', sans-serif;
   text-align: center;
+}
+
+
+@media only screen and (max-width: 1000px){
+  .order-details {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-bottom: solid 3px black;
+    padding: 40px 0px;
+  }
 }
