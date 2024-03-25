@@ -1,34 +1,34 @@
 <% if @order %>
   <div class="payments-show-page">
     <div class="d-flex flex-column justify-content-center align-items-center">
-      <%= image_tag("thankyou.png", style:"width:40%;") %>
-      <div class="d-flex flex-column justify-content-center align-items-center" style="background-color: #D4A4A5; padding: 40px 450px; text-align:center;">
-        <h2 >ORDER CONFIRMATION</h2><br>
+      <%= image_tag("thankyou.png", class: "thankyou-image") %>
+      <div class="order-confirmation-message">
+        <h2>ORDER CONFIRMATION</h2><br>
         <% if @user.present? %>
-          <p>Thank you<%= @user.first_name.capitalize %>for shopping with us. Sit tight, we are preparing your order for shipment. You will be notified when it is on its way to you.</p>
+          <p>Thank you <%= @user.first_name.capitalize %> for shopping with us. Sit tight, we are preparing your order for shipment. You will be notified when it is on its way to you.</p>
         <% else %>
           <p>Thank you for shopping with us. Sit tight, we are preparing your order for shipment. <br>You will be notified when it is on its way to you.</p>
         <% end %>
       </div>
     </div>
-    <p style="margin-left: 200px; margin-right: 200px; border-bottom: solid 3px black; padding: 40px 0px;">Order number: <%= @order.id.to_i %> <b>|</b> Date: <%= @order.created_at.strftime("%B %d, %Y %I:%M %p") %></p>
+    <p class="order-details">Order number: <%= @order.id.to_i %> <b>|</b> Date: <%= @order.created_at.strftime("%B %d, %Y %I:%M %p") %></p>
     <div class="d-flex flex-column gap-5">
       <% @order.line_items.each do |line_item| %>
         <% candle = line_item.candle %>
         <% images = candle.images.first %>
-        <div style="margin-left: 200px; margin-right: 200px; padding: 50px; border-bottom: solid 3px black; border-radius: 0;" class="card first-card flex-row">
+        <div class="card first-card flex-row order-cards">
           <div class="payments-line-item-image">
             <%= image_tag(images.url, class: "card-img-left order-confirmation-image d-block", alt: "Candle Image") %>
           </div>
           <div class="card-body ">
-            <h2 class="card-title" style="font-weight: 700;"><%= line_item.quantity %> x <%= candle.name %> <%= candle.size %></h2>
-            <p class="card-text summary-totals" style="width: 300%; font-family: 'Martel Sans', sans-serif;"><%= candle.scent %></p>
-            <p class="card-text" style="font-weight: 700;"><%= number_to_currency(line_item.total, unit: '£') %></p>
+            <h2 class="card-title"><%= line_item.quantity %> x <%= candle.name %> <%= candle.size %></h2>
+            <p class="card-text summary-totals"><%= candle.scent %></p>
+            <p class="card-text"><%= number_to_currency(line_item.total, unit: '£') %></p>
           </div>
         </div>
       <% end %>
     </div><br>
-    <p class="d-flex flex-column align-items-center" style="font-size: 20px; font-family: 'Martel Sans', sans-serif;">TOTAL: <%= number_to_currency(@order.total_amount, unit: '£') %></p>
+    <p class="order-total">TOTAL: <%= number_to_currency(@order.total_amount, unit: '£') %></p>
   </div>
 <% else %>
   not worked

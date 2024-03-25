@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+.order-cards {
+  margin-left: 200px; margin-right: 200px; padding: 50px; border-bottom: solid 3px black; border-radius: 0;
+}
+
 body.payments.show {
   background-image: linear-gradient(to bottom right, #F1CCE5, #FFFFFF, #94D5FF);
 
@@ -41,4 +45,37 @@ body.payments.show {
 
 .payments-show-page {
   margin: 10rem 0;
+}
+
+/* Add this CSS to your external CSS file */
+.thankyou-image {
+  width: 40%;
+}
+
+.order-confirmation-message {
+  background-color: black;
+  text-align: center;
+  padding: 20px;
+}
+
+.order-details {
+  margin-left: 200px;
+  margin-right: 200px;
+  border-bottom: solid 3px black;
+  padding: 40px 0px;
+}
+
+.order-cards {
+  margin-bottom: 20px;
+}
+
+.summary-totals {
+  width: 300%;
+  font-family: 'Martel Sans', sans-serif;
+}
+
+.order-total {
+  font-size: 20px;
+  font-family: 'Martel Sans', sans-serif;
+  text-align: center;
 }
