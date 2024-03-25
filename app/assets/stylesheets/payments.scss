@@ -56,10 +56,12 @@ body.payments.show {
 }
 
 .order-confirmation-message {
-  background-color: rgb(0, 0, 0);
+  background-color: black;
   text-align: center;
-  padding: 20px;
+  padding: 60px 0;
   margin: 3rem 0;
+  width: 100%;
+  color: white;
 }
 
 .order-details {
@@ -102,5 +104,9 @@ body.payments.show {
 
   .summary-totals {
     width: initial;
+  }
+
+  .thankyou-image {
+    width: 65%;
   }
 }
