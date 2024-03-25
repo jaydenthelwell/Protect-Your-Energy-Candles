@@ -11,6 +11,7 @@ body.payments.show {
 
   .card-text:last-child {
     display: block;
+    justify-content: flex-start !important;
   }
 
   .navbar-text {
@@ -40,7 +41,6 @@ body.payments.show {
   .card-body {
     padding: 0;
   }
-
 }
 
 .payments-line-item-image {
@@ -90,5 +90,16 @@ body.payments.show {
     margin-right: 1rem;
     border-bottom: solid 3px black;
     padding: 40px 0px;
+  }
+
+  .order-cards {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 50px;
+    flex: initial;
+  }
+
+  .summary-totals {
+    width: initial;
   }
 }
