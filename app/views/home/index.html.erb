@@ -28,9 +28,7 @@
                       </div>
                       <strong><%= number_to_currency(candle.price, unit: '£') %></strong>
                     </div>
-                    <%= link_to candles_path(@candles_essentials) do %>
-                      <button class="add-to-bag button">Add to Bag</button>
-                    <% end %>
+                    <%= button_to "Add to bag", line_items_path(candle_id: @candle), method: :post, class: "button flex-item", remote: true %>
                   </div>
                 <% end %>
               </div>

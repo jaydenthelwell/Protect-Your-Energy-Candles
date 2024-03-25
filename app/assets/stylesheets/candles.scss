@@ -4,9 +4,18 @@ body.candles.index {
       font-size: 35px !important;
     }
   }
+  .badge {
+    color: white;
+  }
+  .badge.scrolled {
+    color: black;
+  }
 }
 
 body.candles.show {
+  .badge {
+    color: black;
+  }
   @media only screen and (max-width: 1000px){
     .light-shine {
       font-size: 35px !important;

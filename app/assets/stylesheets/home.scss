@@ -1,4 +1,11 @@
-// body.home.index {
+body.home.index {
+  .badge {
+    color: white!important;
+  }
+  .badge.scrolled {
+    color: black!important;
+  }
+}
 //   .slick-dots button:before {
 //     color:rgb(0, 0, 0) !important;
 //   }
