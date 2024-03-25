@@ -1,4 +1,5 @@
 class CheckoutsController < ApplicationController
+  before_action :authenticate_user!
   def show
     @session = Stripe::Checkout::Session.create(
       line_items: [{
