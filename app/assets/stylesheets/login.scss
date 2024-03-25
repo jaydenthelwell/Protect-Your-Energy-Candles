@@ -109,6 +109,11 @@ body.registrations.new {
   bottom: -200px;
 }
 
+.login-session {
+  background-color: #9FBFD4;
+
+}
+
 @media only screen and (max-width: 1025px) {
   body.sessions.new {
     overflow: scroll;
