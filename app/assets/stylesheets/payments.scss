@@ -3,13 +3,11 @@
 }
 
 body.payments.show {
-  background-color: white;
-  margin: 10rem 0;
+  background-image: linear-gradient(to bottom right, #F1CCE5, #FFFFFF, #94D5FF);
 
   .card-text:last-child {
     display: block;
   }
-
 
   .navbar-text {
     color: black;
@@ -39,4 +37,8 @@ body.payments.show {
 
 .payments-line-item-image {
   width: 20%;
+}
+
+.payments-show-page {
+  margin: 10rem 0;
 }
