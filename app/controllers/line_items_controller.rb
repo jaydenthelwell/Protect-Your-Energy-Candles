@@ -28,7 +28,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        # format.html { redirect_to candle, notice: "Item added to bag." }
+        format.html { redirect_to candle, notice: "Item added to bag." }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new, status: :unprocessable_entity }
