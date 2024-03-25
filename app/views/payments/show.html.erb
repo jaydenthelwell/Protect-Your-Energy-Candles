@@ -17,7 +17,9 @@
         <% candle = line_item.candle %>
         <% images = candle.images.first %>
         <div style="margin-left: 200px; margin-right: 200px; padding: 50px; border-bottom: solid 3px black; border-radius: 0;" class="card first-card flex-row">
-          <%= image_tag(images.url, class: "card-img-left order-confirmation-image d-block", alt: "Candle Image") %>
+          <div class="payments-line-item-image">
+            <%= image_tag(images.url, class: "card-img-left order-confirmation-image d-block", alt: "Candle Image") %>
+          </div>
           <div class="card-body ">
             <h2 class="card-title" style="font-weight: 700;"><%= line_item.quantity %> x <%= candle.name %> <%= candle.size %></h2>
             <p class="card-text summary-totals" style="width: 300%; font-family: 'Martel Sans', sans-serif;"><%= candle.scent %></p>
