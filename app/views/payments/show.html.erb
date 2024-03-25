@@ -1,8 +1,8 @@
 <% if @order %>
   <div class="payments-show-page">
-    <div class="order-confirmation-message d-flex flex-column justify-content-center align-items-center">
+    <div class=" d-flex flex-column justify-content-center align-items-center">
       <%= image_tag("thankyou.png", class: "thankyou-image") %>
-      <div class="">
+      <div class="order-confirmation-message">
         <h2>ORDER CONFIRMATION</h2><br>
         <% if @user.present? %>
           <p>Thank you <%= @user.first_name.capitalize %> for shopping with us. Sit tight, we are preparing your order for shipment. You will be notified when it is on its way to you.</p>
