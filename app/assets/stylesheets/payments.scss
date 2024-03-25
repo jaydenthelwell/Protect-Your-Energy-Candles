@@ -5,6 +5,31 @@
 body.payments.show {
   background-color: white;
   margin: 10rem 0;
+
+  .navbar-text {
+    color: black;
+  }
+
+  .navbar {
+    background-color: #fff !important;
+    border-bottom: 1px solid black;
+  }
+
+  .navbar-icon {
+    color: black;
+  }
+
+  .dropdown-toggle::after {
+    color: black;
+  }
+  .openbtn {
+    color: black;
+  }
+
+  .badge {
+    color: black;
+  }
+
 }
 
 .payments-line-item-image {
