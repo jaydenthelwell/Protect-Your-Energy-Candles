@@ -96,7 +96,7 @@ body.payments.show {
     margin-left: 0;
     margin-right: 0;
     padding: 50px;
-    flex: initial;
+    flex-direction: column;
   }
 
   .summary-totals {

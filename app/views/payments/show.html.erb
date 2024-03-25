@@ -16,7 +16,7 @@
       <% @order.line_items.each do |line_item| %>
         <% candle = line_item.candle %>
         <% images = candle.images.first %>
-        <div class="card first-card flex-row order-cards">
+        <div class="card gap-3 first-card flex-row order-cards">
           <div class="payments-line-item-image">
             <%= image_tag(images.url, class: "card-img-left order-confirmation-image d-block", alt: "Candle Image") %>
           </div>
