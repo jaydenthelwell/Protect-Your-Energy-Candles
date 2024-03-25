@@ -6,6 +6,11 @@ body.payments.show {
   background-color: white;
   margin: 10rem 0;
 
+  .card-text:last-child {
+    display: block;
+  }
+
+
   .navbar-text {
     color: black;
   }
@@ -33,5 +38,5 @@ body.payments.show {
 }
 
 .payments-line-item-image {
-  width: 50%;
+  width: 20%;
 }
